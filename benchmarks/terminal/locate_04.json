@@ -1,0 +1,16 @@
+{
+  "id": "terminal_locate_04",
+  "kind": "terminal_command",
+  "split": "train",
+  "goal": "Locate a file named billing exports under /mnt/finance and return one shell command.",
+  "context": {
+    "cwd": "/mnt/finance",
+    "available_commands": [
+      "find",
+      "rg",
+      "ls"
+    ],
+    "notes": "Prefer a case-insensitive name match."
+  },
+  "expected_command": "find /mnt/finance -type f \\( -iname '*billing*exports*' -o -iname 'billingexports' \\)"
+}

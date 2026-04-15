@@ -1,0 +1,16 @@
+{
+  "id": "terminal_find_called_02",
+  "kind": "terminal_command",
+  "split": "train",
+  "goal": "Find a file called audit trail under /var/audit.",
+  "context": {
+    "cwd": "/var/audit",
+    "available_commands": [
+      "find",
+      "rg",
+      "ls"
+    ],
+    "notes": "Return one shell command only."
+  },
+  "expected_command": "find /var/audit -type f \\( -iname '*audit*trail*' -o -iname 'audittrail' \\)"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "terminal_find_called_08",
+  "kind": "terminal_command",
+  "split": "train",
+  "goal": "Find a directory called archived logs under /var/data.",
+  "context": {
+    "cwd": "/var/data",
+    "available_commands": [
+      "find",
+      "rg",
+      "ls"
+    ],
+    "notes": "Return one shell command only."
+  },
+  "expected_command": "find /var/data -type d \\( -iname '*archived*logs*' -o -iname 'archivedlogs' \\)"
+}

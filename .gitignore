@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+*.egg-info/
+.env
+results.tsv
+runs/current/*
+runs/history/*
+!runs/current/.gitkeep
+!runs/history/.gitkeep

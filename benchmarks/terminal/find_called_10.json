@@ -1,0 +1,16 @@
+{
+  "id": "terminal_find_called_10",
+  "kind": "terminal_command",
+  "split": "dev",
+  "goal": "Find a directory called meta harness under /workspace.",
+  "context": {
+    "cwd": "/workspace",
+    "available_commands": [
+      "find",
+      "rg",
+      "ls"
+    ],
+    "notes": "Return one shell command only."
+  },
+  "expected_command": "find /workspace -type d \\( -iname '*meta*harness*' -o -iname 'metaharness' \\)"
+}

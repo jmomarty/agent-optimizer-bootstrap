@@ -1,0 +1,13 @@
+[project]
+name = "agent-optimizer-bootstrap"
+version = "0.1.0"
+description = "Bootstrap repo for a Codex-driven outer optimization loop over a bounded inner agent."
+requires-python = ">=3.10"
+dependencies = ["google-genai>=1.0.0"]
+
+[tool.setuptools]
+packages = ["inner_agent"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

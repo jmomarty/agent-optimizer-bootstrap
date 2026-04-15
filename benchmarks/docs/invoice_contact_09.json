@@ -1,0 +1,8 @@
+{
+  "id": "docs_invoice_contact_09",
+  "kind": "docs_qa",
+  "split": "dev",
+  "document": "Maple Ridge Services Vendor Guide\n\nShipping requests go to the logistics queue.\nInvoice questions: billing@mapleridge.example.\nUrgent outages must be routed through the incident desk.\nRefund requests close after 90 days.\nOnly approved contacts may change billing details.",
+  "question": "Which email address should someone use for invoice issues?",
+  "expected_answer": "billing@mapleridge.example"
+}

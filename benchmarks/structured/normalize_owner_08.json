@@ -1,0 +1,16 @@
+{
+  "id": "structured_normalize_owner_08",
+  "kind": "structured_extract",
+  "split": "train",
+  "instruction": "Extract the record into normalized JSON with keys full_name, email, team.",
+  "record": {
+    "group": "Standards",
+    "primary_contact": "Tim Berners-Lee <tim@web.example>",
+    "secondary_contact": "Escalate only after paging the primary contact."
+  },
+  "expected_output": {
+    "full_name": "Tim Berners-Lee",
+    "email": "tim@web.example",
+    "team": "Standards"
+  }
+}

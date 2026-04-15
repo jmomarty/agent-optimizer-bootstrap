@@ -1,0 +1,8 @@
+{
+  "id": "docs_refund_window_01",
+  "kind": "docs_qa",
+  "split": "train",
+  "document": "Acorn Cloud Support Handbook\n\nSupport hours: Monday-Friday, 09:00-17:00 UTC.\nRefund policy: Customers may request a refund within 30 days of purchase.\nInvoice questions should go to billing@acorn.example.\nSecurity incidents must be acknowledged within 4 hours.\nEscalation changes must be documented in the operations runbook.",
+  "question": "How many days after purchase can a customer request a refund?",
+  "expected_answer": "30"
+}

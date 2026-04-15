@@ -1,0 +1,17 @@
+{
+  "id": "structured_normalize_directory_entry_06",
+  "kind": "structured_extract",
+  "split": "train",
+  "instruction": "Extract the directory entry into normalized JSON with keys full_name, email, team.",
+  "record": {
+    "email": " barbara@abstraction.example ",
+    "full_name": " Barbara Liskov ",
+    "status": "active",
+    "team": "Architecture"
+  },
+  "expected_output": {
+    "full_name": "Barbara Liskov",
+    "email": "barbara@abstraction.example",
+    "team": "Architecture"
+  }
+}

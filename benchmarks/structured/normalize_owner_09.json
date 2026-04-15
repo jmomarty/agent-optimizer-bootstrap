@@ -1,0 +1,16 @@
+{
+  "id": "structured_normalize_owner_09",
+  "kind": "structured_extract",
+  "split": "dev",
+  "instruction": "Extract the record into normalized JSON with keys full_name, email, team.",
+  "record": {
+    "group": "Verification",
+    "primary_contact": "Edsger Dijkstra <edsger@proof.example>",
+    "secondary_contact": "Escalate only after paging the primary contact."
+  },
+  "expected_output": {
+    "full_name": "Edsger Dijkstra",
+    "email": "edsger@proof.example",
+    "team": "Verification"
+  }
+}

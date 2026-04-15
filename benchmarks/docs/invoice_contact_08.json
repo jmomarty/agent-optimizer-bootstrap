@@ -1,0 +1,8 @@
+{
+  "id": "docs_invoice_contact_08",
+  "kind": "docs_qa",
+  "split": "train",
+  "document": "Cinder Peak Labs Vendor Guide\n\nShipping requests go to the logistics queue.\nInvoice questions: billing@cinderpeak.example.\nUrgent outages must be routed through the incident desk.\nRefund requests close after 35 days.\nOnly approved contacts may change billing details.",
+  "question": "What invoice-questions email is listed?",
+  "expected_answer": "billing@cinderpeak.example"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "structured_normalize_directory_entry_09",
+  "kind": "structured_extract",
+  "split": "dev",
+  "instruction": "Extract the directory entry into normalized JSON with keys full_name, email, team.",
+  "record": {
+    "email": " edsger@proof.example ",
+    "full_name": " Edsger Dijkstra ",
+    "status": "active",
+    "team": "Verification"
+  },
+  "expected_output": {
+    "full_name": "Edsger Dijkstra",
+    "email": "edsger@proof.example",
+    "team": "Verification"
+  }
+}

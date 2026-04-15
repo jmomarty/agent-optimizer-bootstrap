@@ -1,0 +1,8 @@
+{
+  "id": "docs_invoice_contact_10",
+  "kind": "docs_qa",
+  "split": "dev",
+  "document": "Orbit Bay Platform Vendor Guide\n\nShipping requests go to the logistics queue.\nInvoice questions: billing@orbitbay.example.\nUrgent outages must be routed through the incident desk.\nRefund requests close after 15 days.\nOnly approved contacts may change billing details.",
+  "question": "What email should be used for billing invoices?",
+  "expected_answer": "billing@orbitbay.example"
+}

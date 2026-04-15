@@ -1,0 +1,8 @@
+{
+  "id": "docs_invoice_contact_06",
+  "kind": "docs_qa",
+  "split": "train",
+  "document": "Summit Grid Vendor Guide\n\nShipping requests go to the logistics queue.\nInvoice questions: billing@summitgrid.example.\nUrgent outages must be routed through the incident desk.\nRefund requests close after 28 days.\nOnly approved contacts may change billing details.",
+  "question": "What contact email is used for invoice questions?",
+  "expected_answer": "billing@summitgrid.example"
+}

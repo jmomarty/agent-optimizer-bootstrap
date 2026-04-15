@@ -1,0 +1,16 @@
+{
+  "id": "terminal_find_called_03",
+  "kind": "terminal_command",
+  "split": "train",
+  "goal": "Find a directory called team photos under /assets.",
+  "context": {
+    "cwd": "/assets",
+    "available_commands": [
+      "find",
+      "rg",
+      "ls"
+    ],
+    "notes": "Return one shell command only."
+  },
+  "expected_command": "find /assets -type d \\( -iname '*team*photos*' -o -iname 'teamphotos' \\)"
+}

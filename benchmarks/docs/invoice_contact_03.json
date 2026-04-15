@@ -1,0 +1,8 @@
+{
+  "id": "docs_invoice_contact_03",
+  "kind": "docs_qa",
+  "split": "train",
+  "document": "Blue Mesa Hosting Vendor Guide\n\nShipping requests go to the logistics queue.\nInvoice questions: billing@bluemesa.example.\nUrgent outages must be routed through the incident desk.\nRefund requests close after 45 days.\nOnly approved contacts may change billing details.",
+  "question": "Where should invoice questions be emailed?",
+  "expected_answer": "billing@bluemesa.example"
+}

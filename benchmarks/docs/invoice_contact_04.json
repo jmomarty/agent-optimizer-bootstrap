@@ -1,0 +1,8 @@
+{
+  "id": "docs_invoice_contact_04",
+  "kind": "docs_qa",
+  "split": "train",
+  "document": "Pine Street Data Vendor Guide\n\nShipping requests go to the logistics queue.\nInvoice questions: billing@pinestreet.example.\nUrgent outages must be routed through the incident desk.\nRefund requests close after 14 days.\nOnly approved contacts may change billing details.",
+  "question": "What email address is listed for invoice questions?",
+  "expected_answer": "billing@pinestreet.example"
+}

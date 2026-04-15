@@ -1,0 +1,16 @@
+{
+  "id": "structured_normalize_contact_08",
+  "kind": "structured_extract",
+  "split": "train",
+  "instruction": "Extract the primary contact into normalized JSON with keys full_name, email, team.",
+  "record": {
+    "contact": "  Tim Berners-Lee <tim@web.example> ",
+    "department": "Standards",
+    "notes": "Primary owner for the queue."
+  },
+  "expected_output": {
+    "full_name": "Tim Berners-Lee",
+    "email": "tim@web.example",
+    "team": "Standards"
+  }
+}

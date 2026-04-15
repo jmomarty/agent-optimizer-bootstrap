@@ -1,0 +1,8 @@
+{
+  "id": "docs_invoice_contact_01",
+  "kind": "docs_qa",
+  "split": "train",
+  "document": "Acorn Cloud Vendor Guide\n\nShipping requests go to the logistics queue.\nInvoice questions: billing@acorn.example.\nUrgent outages must be routed through the incident desk.\nRefund requests close after 30 days.\nOnly approved contacts may change billing details.",
+  "question": "What email should vendors use for invoice questions?",
+  "expected_answer": "billing@acorn.example"
+}

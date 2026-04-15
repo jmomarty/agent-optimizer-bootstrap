@@ -1,0 +1,16 @@
+{
+  "id": "terminal_find_called_05",
+  "kind": "terminal_command",
+  "split": "train",
+  "goal": "Find a directory called run books under /opt/docs.",
+  "context": {
+    "cwd": "/opt/docs",
+    "available_commands": [
+      "find",
+      "rg",
+      "ls"
+    ],
+    "notes": "Return one shell command only."
+  },
+  "expected_command": "find /opt/docs -type d \\( -iname '*run*books*' -o -iname 'runbooks' \\)"
+}

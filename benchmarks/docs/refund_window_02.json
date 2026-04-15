@@ -1,0 +1,8 @@
+{
+  "id": "docs_refund_window_02",
+  "kind": "docs_qa",
+  "split": "train",
+  "document": "Northwind Systems Support Handbook\n\nSupport hours: Monday-Friday, 09:00-17:00 UTC.\nRefund policy: Customers may request a refund within 21 days of purchase.\nInvoice questions should go to billing@northwind.example.\nSecurity incidents must be acknowledged within 2 hours.\nEscalation changes must be documented in the operations runbook.",
+  "question": "What is the refund window in days?",
+  "expected_answer": "21"
+}

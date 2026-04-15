@@ -1,0 +1,8 @@
+{
+  "id": "docs_security_ack_window_09",
+  "kind": "docs_qa",
+  "split": "dev",
+  "document": "Maple Ridge Services Security Playbook\n\nLow-risk tickets are reviewed weekly.\nSecurity incidents must be acknowledged within 16 hours.\nBilling queries should be routed to billing@mapleridge.example.\nRefund policy remains 90 days from purchase.\nPostmortems are stored in the security knowledge base.",
+  "question": "In hours, what acknowledgement time is listed for security incidents?",
+  "expected_answer": "16"
+}

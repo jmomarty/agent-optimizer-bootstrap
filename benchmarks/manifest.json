@@ -1,0 +1,545 @@
+{
+  "name": "bootstrap-local-benchmark",
+  "tasks": [
+    {
+      "id": "docs_invoice_contact_01",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/invoice_contact_01.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_invoice_contact_02",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/invoice_contact_02.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_invoice_contact_03",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/invoice_contact_03.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_invoice_contact_04",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/invoice_contact_04.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_invoice_contact_05",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/invoice_contact_05.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_invoice_contact_06",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/invoice_contact_06.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_invoice_contact_07",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/invoice_contact_07.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_invoice_contact_08",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/invoice_contact_08.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_invoice_contact_09",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/invoice_contact_09.json",
+      "split": "dev"
+    },
+    {
+      "id": "docs_invoice_contact_10",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/invoice_contact_10.json",
+      "split": "dev"
+    },
+    {
+      "id": "docs_refund_window_01",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/refund_window_01.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_refund_window_02",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/refund_window_02.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_refund_window_03",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/refund_window_03.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_refund_window_04",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/refund_window_04.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_refund_window_05",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/refund_window_05.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_refund_window_06",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/refund_window_06.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_refund_window_07",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/refund_window_07.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_refund_window_08",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/refund_window_08.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_refund_window_09",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/refund_window_09.json",
+      "split": "dev"
+    },
+    {
+      "id": "docs_refund_window_10",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/refund_window_10.json",
+      "split": "dev"
+    },
+    {
+      "id": "docs_security_ack_window_01",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/security_ack_window_01.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_security_ack_window_02",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/security_ack_window_02.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_security_ack_window_03",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/security_ack_window_03.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_security_ack_window_04",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/security_ack_window_04.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_security_ack_window_05",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/security_ack_window_05.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_security_ack_window_06",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/security_ack_window_06.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_security_ack_window_07",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/security_ack_window_07.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_security_ack_window_08",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/security_ack_window_08.json",
+      "split": "train"
+    },
+    {
+      "id": "docs_security_ack_window_09",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/security_ack_window_09.json",
+      "split": "dev"
+    },
+    {
+      "id": "docs_security_ack_window_10",
+      "kind": "docs_qa",
+      "path": "benchmarks/docs/security_ack_window_10.json",
+      "split": "dev"
+    },
+    {
+      "id": "structured_normalize_contact_01",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_contact_01.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_contact_02",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_contact_02.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_contact_03",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_contact_03.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_contact_04",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_contact_04.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_contact_05",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_contact_05.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_contact_06",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_contact_06.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_contact_07",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_contact_07.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_contact_08",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_contact_08.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_contact_09",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_contact_09.json",
+      "split": "dev"
+    },
+    {
+      "id": "structured_normalize_contact_10",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_contact_10.json",
+      "split": "dev"
+    },
+    {
+      "id": "structured_normalize_directory_entry_01",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_directory_entry_01.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_directory_entry_02",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_directory_entry_02.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_directory_entry_03",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_directory_entry_03.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_directory_entry_04",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_directory_entry_04.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_directory_entry_05",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_directory_entry_05.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_directory_entry_06",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_directory_entry_06.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_directory_entry_07",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_directory_entry_07.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_directory_entry_08",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_directory_entry_08.json",
+      "split": "dev"
+    },
+    {
+      "id": "structured_normalize_directory_entry_09",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_directory_entry_09.json",
+      "split": "dev"
+    },
+    {
+      "id": "structured_normalize_directory_entry_10",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_directory_entry_10.json",
+      "split": "dev"
+    },
+    {
+      "id": "structured_normalize_owner_01",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_owner_01.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_owner_02",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_owner_02.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_owner_03",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_owner_03.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_owner_04",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_owner_04.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_owner_05",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_owner_05.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_owner_06",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_owner_06.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_owner_07",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_owner_07.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_owner_08",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_owner_08.json",
+      "split": "train"
+    },
+    {
+      "id": "structured_normalize_owner_09",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_owner_09.json",
+      "split": "dev"
+    },
+    {
+      "id": "structured_normalize_owner_10",
+      "kind": "structured_extract",
+      "path": "benchmarks/structured/normalize_owner_10.json",
+      "split": "dev"
+    },
+    {
+      "id": "terminal_find_called_01",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_called_01.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_called_02",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_called_02.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_called_03",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_called_03.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_called_04",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_called_04.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_called_05",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_called_05.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_called_06",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_called_06.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_called_07",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_called_07.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_called_08",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_called_08.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_called_09",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_called_09.json",
+      "split": "dev"
+    },
+    {
+      "id": "terminal_find_called_10",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_called_10.json",
+      "split": "dev"
+    },
+    {
+      "id": "terminal_find_named_01",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_named_01.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_named_02",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_named_02.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_named_03",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_named_03.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_named_04",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_named_04.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_named_05",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_named_05.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_named_06",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_named_06.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_named_07",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_named_07.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_named_08",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_named_08.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_find_named_09",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_named_09.json",
+      "split": "dev"
+    },
+    {
+      "id": "terminal_find_named_10",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/find_named_10.json",
+      "split": "dev"
+    },
+    {
+      "id": "terminal_locate_01",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/locate_01.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_locate_02",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/locate_02.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_locate_03",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/locate_03.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_locate_04",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/locate_04.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_locate_05",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/locate_05.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_locate_06",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/locate_06.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_locate_07",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/locate_07.json",
+      "split": "train"
+    },
+    {
+      "id": "terminal_locate_08",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/locate_08.json",
+      "split": "dev"
+    },
+    {
+      "id": "terminal_locate_09",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/locate_09.json",
+      "split": "dev"
+    },
+    {
+      "id": "terminal_locate_10",
+      "kind": "terminal_command",
+      "path": "benchmarks/terminal/locate_10.json",
+      "split": "dev"
+    }
+  ]
+}

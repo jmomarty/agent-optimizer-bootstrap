@@ -1,0 +1,16 @@
+{
+  "id": "terminal_find_called_01",
+  "kind": "terminal_command",
+  "split": "train",
+  "goal": "Find a directory called backup jobs under /ops.",
+  "context": {
+    "cwd": "/ops",
+    "available_commands": [
+      "find",
+      "rg",
+      "ls"
+    ],
+    "notes": "Return one shell command only."
+  },
+  "expected_command": "find /ops -type d \\( -iname '*backup*jobs*' -o -iname 'backupjobs' \\)"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "structured_normalize_contact_07",
+  "kind": "structured_extract",
+  "split": "train",
+  "instruction": "Extract the primary contact into normalized JSON with keys full_name, email, team.",
+  "record": {
+    "contact": "  Radia Perlman <radia@bridging.example> ",
+    "department": "Networking",
+    "notes": "Primary owner for the queue."
+  },
+  "expected_output": {
+    "full_name": "Radia Perlman",
+    "email": "radia@bridging.example",
+    "team": "Networking"
+  }
+}

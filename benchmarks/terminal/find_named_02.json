@@ -1,0 +1,16 @@
+{
+  "id": "terminal_find_named_02",
+  "kind": "terminal_command",
+  "split": "train",
+  "goal": "Find a file named quarterly report anywhere under /srv/shared.",
+  "context": {
+    "cwd": "/srv/shared",
+    "available_commands": [
+      "find",
+      "rg",
+      "ls"
+    ],
+    "notes": "Return one shell command only."
+  },
+  "expected_command": "find /srv/shared -type f \\( -iname '*quarterly*report*' -o -iname 'quarterlyreport' \\)"
+}
