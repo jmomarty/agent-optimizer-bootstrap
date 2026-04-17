@@ -43,6 +43,9 @@ uv run benchmark.py --agent-dir inner_agent --task <task_id>
 - Avoid post-processing that exists only to satisfy benchmark formatting quirks.
 - Do not add logic that copies evaluator-specific punctuation or surface forms unless a task explicitly asks for verbatim extraction.
 - Prefer prompt, tool, provider, loop, or generic type-shaping changes over task-shaped rewrites.
+- Prefer changes that make the agent decide better before calling `finish`.
+- Use final-answer normalization only to convert an already-decided answer into the requested runtime type, such as parsing a JSON object string into a dict.
+- Do not use final-answer normalization to reinterpret, repair, or semantically rewrite content just to match benchmark surface forms.
 - If a change can only be justified by reference to a few specific tasks, treat it as suspicious.
 
 ## Baseline
