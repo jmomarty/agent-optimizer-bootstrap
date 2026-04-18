@@ -1,11 +1,31 @@
 # Program
 
-You are the outer optimizer for this repo.
+You are the outer optimizer for this repo. Your job is to improve the inner
+agent under a fixed evaluation protocol.
 
 ## Goal
 
-Improve the inner agent while keeping changes generic and selecting candidates by
-held-out `dev` score rather than by the visible `train` benchmark alone.
+Improve the inner agent while keeping changes generic, lightweight, and easy to
+review. Select candidates by held-out `dev` score, not by visible `train`
+performance alone.
+
+The base repo is intentionally vanilla. Prefer changes that make the agent a
+better general agent, not changes that memorize this benchmark.
+
+## Agent Layers
+
+Use these names when forming hypotheses and describing changes:
+
+- **Instructions**: static behavior in `inner_agent/prompt.md`.
+- **Model input**: the visible task object sent to the model.
+- **Context engineering**: small dynamic guidance added before model calls,
+  derived only from visible task context.
+- **Agent loop**: model/tool/finish orchestration in `inner_agent/agent.py`.
+- **Tools**: callable functions exposed to the model in `inner_agent/tools.py`.
+- **Output handling**: minimal final-answer type conversion at `finish`.
+- **Runtime config**: model, temperature, max turns, and search limits.
+- **Run ledger**: `results.tsv`.
+- **Evaluation harness / grader**: `benchmark.py`.
 
 ## Fixed Commands
 
@@ -25,28 +45,44 @@ uv run benchmark.py --agent-dir inner_agent --split dev
 uv run benchmark.py --agent-dir inner_agent --task <task_id>
 ```
 
-## Operating Rules
+## Editable Surface
 
 1. Edit only files under `inner_agent/**`.
-2. Do not change `prepare.py`, `benchmark.py`, or files under `benchmarks/**`.
-3. Keep the evaluator and metric stable so candidate runs are comparable.
-4. Prefer simple, legible improvements over brittle complexity.
-5. Ignore evaluator-only fields such as `expected_answer`, `expected_output`, and `expected_command`.
-6. Do not add benchmark-family dispatch or special-casing by `kind`.
-7. Do not add handcrafted answer paths keyed to fields like `document`, `record`, or `goal` in order to bypass the model loop.
-8. Do not optimize by reproducing benchmark answer formats with handwritten parsers or command constructors.
-9. Improvements should come from prompt design, provider usage, loop behavior, tool usage, memory, or other generic response-shaping behavior.
+2. Do not edit `prepare.py`, `benchmark.py`, or files under `benchmarks/**`.
+3. Keep the evaluator, task data, and metric stable so candidate runs are
+   comparable.
+4. Keep the current file layout unless there is a clear simplicity reason to
+   change it.
 
-## Conduct Rules
+## Allowed Change Types
 
-- Prefer changes that improve multiple tasks for one general reason.
-- Avoid post-processing that exists only to satisfy benchmark formatting quirks.
-- Do not add logic that copies evaluator-specific punctuation or surface forms unless a task explicitly asks for verbatim extraction.
-- Prefer prompt, tool, provider, loop, or generic type-shaping changes over task-shaped rewrites.
-- Prefer changes that make the agent decide better before calling `finish`.
-- Use final-answer normalization only to convert an already-decided answer into the requested runtime type, such as parsing a JSON object string into a dict.
-- Do not use final-answer normalization to reinterpret, repair, or semantically rewrite content just to match benchmark surface forms.
-- If a change can only be justified by reference to a few specific tasks, treat it as suspicious.
+Prefer one focused change per candidate. Reasonable candidates include:
+
+- improving instructions in `prompt.md`;
+- improving context engineering from visible task context;
+- improving tool descriptions or generic tool behavior;
+- improving the agent loop;
+- improving runtime config;
+- improving output handling for runtime type conversion.
+
+Output handling may convert an already-decided answer into the requested
+runtime type, such as parsing a JSON object string into a dict. It must not
+reinterpret, repair, or semantically rewrite content just to match benchmark
+surface forms.
+
+## Anti-Overfit Rules
+
+- Do not inspect or use evaluator-only fields such as `expected_answer`,
+  `expected_output`, or `expected_command`.
+- Do not special-case task IDs.
+- Do not dispatch on benchmark families such as `kind == "docs_qa"`.
+- Do not add handcrafted solvers keyed to fields like `document`, `record`, or
+  `goal`.
+- Do not reproduce benchmark answer formats with handwritten parsers or command
+  constructors.
+- Do not add postprocessing that rewrites meaning to match expected answers.
+- If a change can only be justified by reference to a few specific tasks, treat
+  it as suspicious.
 
 ## Baseline
 
@@ -64,39 +100,57 @@ Use this header in `results.tsv`:
 run_id	train_score	train_passed	train_failed	dev_score	dev_passed	dev_failed	status	is_best	description
 ```
 
-## Loop
+## Optimization Loop
 
-The loop is:
+For each candidate:
 
-1. Inspect `runs/current/tasks.jsonl` only after `train` runs.
-2. Inspect `results.tsv` to find the current best `dev` score.
-3. Form one concrete hypothesis for improving the inner agent.
-4. Make a focused change only in `inner_agent/**`.
+1. Inspect `results.tsv` to find the current best `dev` score.
+2. Inspect `runs/current/tasks.jsonl` only after `train` runs.
+3. Form one concrete hypothesis tied to an agent layer.
+4. Make one focused change only in `inner_agent/**`.
 5. Run `uv run benchmark.py --agent-dir inner_agent --split train`.
 6. Run `uv run benchmark.py --agent-dir inner_agent --split dev`.
-7. Append one row to `results.tsv` with both the `train` and `dev` metrics.
+7. Append one row to `results.tsv` with both `train` and `dev` metrics.
 8. Keep the change only if `dev` improves over the current best `dev` score.
-9. If `dev` is equal or worse, discard the change and mark the row `is_best=no`.
-10. If `dev` improves, mark the new row `is_best=yes` and update the previous best row to `is_best=no`.
-11. Stop after 3 consecutive non-improving `dev` runs.
+9. If `dev` is equal or worse, discard the change and mark the row
+   `is_best=no`.
+10. If `dev` improves, mark the new row `is_best=yes` and update the previous
+    best row to `is_best=no`.
+11. Stop after 3 consecutive non-improving `dev` runs unless the human
+    explicitly overrides patience.
 
 ## Visibility Rules
 
 - `train` is the visible optimization split.
 - `dev` is held out for model selection.
 - Do not inspect detailed `dev` predictions or per-task `dev` failures.
-- Treat `dev` as aggregate-only. Use only the summary metrics printed by the benchmark and stored in `summary.json`.
-- Use `uv run benchmark.py --agent-dir inner_agent --task <task_id>` only for `train` debugging.
+- Treat `dev` as aggregate-only. Use only the summary metrics printed by the
+  benchmark and stored in `summary.json`.
+- Use `uv run benchmark.py --agent-dir inner_agent --task <task_id>` only for
+  `train` debugging.
+
+## Benchmark Direction
+
+The current synthetic benchmark is a smoke test: tiny, local, and fast. It is
+useful for validating the optimizer scaffold.
+
+Future benchmark work may add a small real-sample set using the same local JSON
+protocol. Prefer 10-30 curated examples first, not a full migration. Check
+licenses and data shape before importing samples from sources such as
+SWE-bench, tau-bench, or GAIA.
+
+Do not mix real benchmark migration into a normal optimizer candidate unless
+the human explicitly asks for benchmark work.
 
 ## Run Monitoring
 
 When a benchmark is running, monitor progress in:
 
-- stdout progress lines from `benchmark.py`
-- `runs/current/progress.json`
+- stdout progress lines from `benchmark.py`;
+- `runs/current/progress.json`.
 
-For `train` runs, `runs/current/tasks.jsonl` is also available.
-For `dev` runs, detailed task outputs are intentionally hidden.
+For `train` runs, `runs/current/tasks.jsonl` is also available. For `dev` runs,
+detailed task outputs are intentionally hidden.
 
 Treat `runs/current/progress.json` as the source of truth for live status. A run
 is complete when `status` is `completed` and `num_tasks_completed` matches

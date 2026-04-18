@@ -15,12 +15,6 @@ class AgentLoopError(RuntimeError):
     """Raised when the baseline agent does not finish within its turn budget."""
 
 
-@dataclass(frozen=True)
-class TaskContext:
-    task_id: str
-    visible_task: dict[str, Any]
-
-
 @dataclass
 class AgentState:
     turn_count: int = 0
@@ -39,9 +33,16 @@ class Agent:
     def solve(self, task: dict[str, Any]) -> Any:
         self.memory = AgentMemory()
         self.last_state = AgentState()
-        context = self._build_task_context(task)
-        messages = self._initial_messages(self.config, context)
+        visible_task = build_visible_task(task)
+        messages = build_initial_messages(self.config, visible_task)
 
+        return self._run_agent_loop(messages, visible_task)
+
+    def _run_agent_loop(
+        self,
+        messages: list[dict[str, Any]],
+        visible_task: dict[str, Any],
+    ) -> Any:
         for turn in range(1, self.config.max_turns + 1):
             self.last_state.turn_count = turn
             response = self.provider.generate(
@@ -55,7 +56,7 @@ class Agent:
             for call in response.tool_calls:
                 outcome = dispatch_tool_call(
                     call,
-                    visible_task=context.visible_task,
+                    visible_task=visible_task,
                     memory=self.memory,
                     search_limit=self.config.search_result_limit,
                 )
@@ -83,32 +84,6 @@ class Agent:
             f"Agent exited without a finish action after {self.config.max_turns} turns."
         )
 
-    def _build_task_context(self, task: dict[str, Any]) -> TaskContext:
-        visible_task = {
-            key: value
-            for key, value in task.items()
-            if not key.startswith("expected_")
-        }
-        return TaskContext(
-            task_id=str(task.get("id", "")),
-            visible_task=visible_task,
-        )
-
-    def _initial_messages(
-        self,
-        config: AgentConfig,
-        context: TaskContext,
-    ) -> list[dict[str, Any]]:
-        user_prompt = (
-            "Visible task object:\n"
-            f"{json.dumps(context.visible_task, indent=2, sort_keys=True)}\n\n"
-            "Use tools when needed and call finish(answer) when ready."
-        )
-        return [
-            {"role": "system", "content": config.prompt_template},
-            {"role": "user", "content": user_prompt},
-        ]
-
     def _record_model_response(self, turn: int, response: ModelResponse) -> None:
         self.memory.add(
             "model_response",
@@ -125,3 +100,34 @@ class Agent:
             "content": response.content or "",
             "tool_calls": [tool_call.to_dict() for tool_call in response.tool_calls],
         }
+
+
+def build_visible_task(task: dict[str, Any]) -> dict[str, Any]:
+    """Build the model-visible task object by removing evaluator-only fields."""
+    return {
+        key: value
+        for key, value in task.items()
+        if not key.startswith("expected_")
+    }
+
+
+def extra_guidance_for_task(visible_task: dict[str, Any]) -> str:
+    """Return optional dynamic guidance derived only from visible task context."""
+    return ""
+
+
+def build_initial_messages(
+    config: AgentConfig,
+    visible_task: dict[str, Any],
+) -> list[dict[str, Any]]:
+    extra_guidance = extra_guidance_for_task(visible_task)
+    user_prompt = (
+        "Visible task object:\n"
+        f"{json.dumps(visible_task, indent=2, sort_keys=True)}\n\n"
+        f"{extra_guidance}"
+        "Use tools when needed and call finish(answer) when ready."
+    )
+    return [
+        {"role": "system", "content": config.prompt_template},
+        {"role": "user", "content": user_prompt},
+    ]
