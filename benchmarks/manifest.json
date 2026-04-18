@@ -540,6 +540,42 @@
       "kind": "terminal_command",
       "path": "benchmarks/terminal/locate_10.json",
       "split": "dev"
+    },
+    {
+      "id": "real_swebench_sqlfluff_quiet_mode_01",
+      "kind": "docs_qa",
+      "path": "benchmarks/real_samples/swebench_sqlfluff_quiet_mode_01.json",
+      "split": "train"
+    },
+    {
+      "id": "real_swebench_astroid_numpy_warning_01",
+      "kind": "docs_qa",
+      "path": "benchmarks/real_samples/swebench_astroid_numpy_warning_01.json",
+      "split": "train"
+    },
+    {
+      "id": "real_swebench_sqlfluff_repo_01",
+      "kind": "docs_qa",
+      "path": "benchmarks/real_samples/swebench_sqlfluff_repo_01.json",
+      "split": "dev"
+    },
+    {
+      "id": "real_bfcl_triangle_area_01",
+      "kind": "structured_extract",
+      "path": "benchmarks/real_samples/bfcl_triangle_area_01.json",
+      "split": "train"
+    },
+    {
+      "id": "real_bfcl_factorial_01",
+      "kind": "structured_extract",
+      "path": "benchmarks/real_samples/bfcl_factorial_01.json",
+      "split": "train"
+    },
+    {
+      "id": "real_bfcl_sort_list_01",
+      "kind": "structured_extract",
+      "path": "benchmarks/real_samples/bfcl_sort_list_01.json",
+      "split": "dev"
     }
   ]
 }

@@ -131,13 +131,16 @@ For each candidate:
 
 ## Benchmark Direction
 
-The current synthetic benchmark is a smoke test: tiny, local, and fast. It is
-useful for validating the optimizer scaffold.
+The benchmark is mostly synthetic smoke-test data: tiny, local, and fast. It
+also includes a few adapted real benchmark samples under
+`benchmarks/real_samples/` to probe more realistic model-input shapes without
+changing the lightweight harness.
 
-Future benchmark work may add a small real-sample set using the same local JSON
+Future benchmark work may expand that real-sample set using the same local JSON
 protocol. Prefer 10-30 curated examples first, not a full migration. Check
 licenses and data shape before importing samples from sources such as
-SWE-bench, tau-bench, or GAIA.
+SWE-bench, tau-bench, BFCL, or GAIA. Do not include gated data, private test
+data, or sources whose terms restrict redistribution.
 
 Do not mix real benchmark migration into a normal optimizer candidate unless
 the human explicitly asks for benchmark work.

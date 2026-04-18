@@ -1,0 +1,29 @@
+{
+  "id": "real_bfcl_triangle_area_01",
+  "kind": "structured_extract",
+  "split": "train",
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "instruction": "From the user request and available function, return the intended tool call as JSON with keys tool_name and arguments.",
+  "record": {
+    "user_request": "Find the area of a triangle with a base of 10 units and height of 5 units.",
+    "available_function": {
+      "name": "calculate_triangle_area",
+      "parameters": {
+        "base": "number",
+        "height": "number"
+      }
+    }
+  },
+  "expected_output": {
+    "tool_name": "calculate_triangle_area",
+    "arguments": {
+      "base": 10,
+      "height": 5
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "real_bfcl_factorial_01",
+  "kind": "structured_extract",
+  "split": "train",
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "instruction": "From the user request and available function, return the intended tool call as JSON with keys tool_name and arguments.",
+  "record": {
+    "user_request": "Calculate the factorial of 5 using math functions.",
+    "available_function": {
+      "name": "factorial",
+      "parameters": {
+        "n": "integer"
+      }
+    }
+  },
+  "expected_output": {
+    "tool_name": "factorial",
+    "arguments": {
+      "n": 5
+    }
+  }
+}
