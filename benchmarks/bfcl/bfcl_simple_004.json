@@ -1,0 +1,53 @@
+{
+  "expected_output": {
+    "arguments": {
+      "a": 2,
+      "b": 6,
+      "c": 5
+    },
+    "tool_name": "solve_quadratic_equation"
+  },
+  "id": "bfcl_simple_004",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Function solves the quadratic equation and returns its roots.",
+        "name": "solve_quadratic_equation",
+        "parameters": {
+          "properties": {
+            "a": {
+              "description": "Coefficient of x squared",
+              "type": "integer"
+            },
+            "b": {
+              "description": "Coefficient of x",
+              "type": "integer"
+            },
+            "c": {
+              "description": "Constant term in the quadratic equation.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "a",
+            "b",
+            "c"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Solve a quadratic equation where a=2, b=6, and c=5"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_4",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "dev"
+}

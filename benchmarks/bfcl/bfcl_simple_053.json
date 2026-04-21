@@ -1,0 +1,49 @@
+{
+  "expected_output": {
+    "arguments": {
+      "DNA_id": "DNA123"
+    },
+    "tool_name": "fetch_DNA_sequence"
+  },
+  "id": "bfcl_simple_053",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Retrieve the sequence of a DNA molecule with the given id from a public database.",
+        "name": "fetch_DNA_sequence",
+        "parameters": {
+          "properties": {
+            "DNA_id": {
+              "description": "Unique ID of the DNA molecule in the database.",
+              "type": "string"
+            },
+            "format": {
+              "description": "Optional parameter to get sequence in specific format (default to 'fasta').",
+              "type": "string"
+            },
+            "upstream": {
+              "description": "Optional parameter to include certain number of base pairs upstream the DNA sequence (default to 0).",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "DNA_id"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Retrieve the sequence of DNA molecule with id `DNA123`."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_53",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

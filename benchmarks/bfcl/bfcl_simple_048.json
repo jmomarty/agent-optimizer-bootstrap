@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "mass": 45,
+      "volume": 15
+    },
+    "tool_name": "calculate_density"
+  },
+  "id": "bfcl_simple_048",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the density of a substance based on its mass and volume.",
+        "name": "calculate_density",
+        "parameters": {
+          "properties": {
+            "mass": {
+              "description": "The mass of the substance in kilograms.",
+              "type": "integer"
+            },
+            "unit": {
+              "description": "The unit of density. Default is kg/m\u00b3",
+              "type": "string"
+            },
+            "volume": {
+              "description": "The volume of the substance in cubic meters.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "mass",
+            "volume"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "What is the density of a substance with a mass of 45 kg and a volume of 15 m\u00b3?"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_48",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

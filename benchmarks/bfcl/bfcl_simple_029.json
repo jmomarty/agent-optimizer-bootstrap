@@ -1,0 +1,49 @@
+{
+  "expected_output": {
+    "arguments": {
+      "time": 5
+    },
+    "tool_name": "calculate_final_speed"
+  },
+  "id": "bfcl_simple_029",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the final speed of an object in free fall after a certain time, neglecting air resistance. The acceleration due to gravity is considered as -9.81 m/s^2",
+        "name": "calculate_final_speed",
+        "parameters": {
+          "properties": {
+            "gravity": {
+              "description": "The acceleration due to gravity. Default is -9.81 m/s^2.",
+              "type": "float"
+            },
+            "initial_speed": {
+              "description": "The initial speed of the object in m/s. Default is 0 for an object at rest.",
+              "type": "integer"
+            },
+            "time": {
+              "description": "The time in seconds for which the object is in free fall.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "time"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "What is the final speed of an object dropped from rest after falling for 5 seconds if we neglect air resistance?"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_29",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "dev"
+}

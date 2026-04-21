@@ -1,0 +1,59 @@
+{
+  "expected_output": {
+    "arguments": {
+      "country": "Brazil",
+      "land_area": 8500000,
+      "population": 213000000,
+      "year": "2022"
+    },
+    "tool_name": "calculate_density"
+  },
+  "id": "bfcl_simple_065",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the population density of a specific country in a specific year.",
+        "name": "calculate_density",
+        "parameters": {
+          "properties": {
+            "country": {
+              "description": "The country for which the density needs to be calculated.",
+              "type": "string"
+            },
+            "land_area": {
+              "description": "The land area of the country in square kilometers.",
+              "type": "integer"
+            },
+            "population": {
+              "description": "The population of the country.",
+              "type": "integer"
+            },
+            "year": {
+              "description": "The year in which the density is to be calculated.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "country",
+            "year",
+            "population",
+            "land_area"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the Population Density for Brazil in 2022 if the population is 213 million and the land area is 8.5 million square kilometers."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_65",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

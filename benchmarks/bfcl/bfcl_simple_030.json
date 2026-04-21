@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "acceleration": 4,
+      "distance": 300
+    },
+    "tool_name": "kinematics.final_velocity_from_distance"
+  },
+  "id": "bfcl_simple_030",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the final velocity of an object given the acceleration and distance travelled, assuming initial velocity is 0.",
+        "name": "kinematics.final_velocity_from_distance",
+        "parameters": {
+          "properties": {
+            "acceleration": {
+              "description": "Acceleration of the object, m/s^2.",
+              "type": "integer"
+            },
+            "distance": {
+              "description": "Distance traveled by the object, m.",
+              "type": "integer"
+            },
+            "initial_velocity": {
+              "description": "Initial velocity of the object. Default is 0, m/s",
+              "type": "float"
+            }
+          },
+          "required": [
+            "acceleration",
+            "distance"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "What is the final velocity of a vehicle that started from rest and accelerated at 4 m/s^2 for a distance of 300 meters?"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_30",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

@@ -1,0 +1,65 @@
+{
+  "expected_output": {
+    "arguments": {
+      "daily_budget": 100,
+      "days": 7,
+      "destination": "Tokyo",
+      "exploration_type": "nature"
+    },
+    "tool_name": "travel_itinerary_generator"
+  },
+  "id": "bfcl_simple_034",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Generate a travel itinerary based on specific destination, duration and daily budget, with preferred exploration type.",
+        "name": "travel_itinerary_generator",
+        "parameters": {
+          "properties": {
+            "daily_budget": {
+              "description": "The maximum daily budget for the trip.",
+              "type": "integer"
+            },
+            "days": {
+              "description": "Number of days for the trip.",
+              "type": "integer"
+            },
+            "destination": {
+              "description": "Destination city of the trip.",
+              "type": "string"
+            },
+            "exploration_type": {
+              "default": "urban",
+              "description": "The preferred exploration type.",
+              "enum": [
+                "nature",
+                "urban",
+                "history",
+                "culture"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "destination",
+            "days",
+            "daily_budget"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Create an itinerary for a 7 days trip to Tokyo with daily budgets not exceeding $100 and prefer exploring nature."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_34",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "dev"
+}

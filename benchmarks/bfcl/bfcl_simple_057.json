@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "dilution": 5,
+      "optical_density": 0.6
+    },
+    "tool_name": "calculate_cell_density"
+  },
+  "id": "bfcl_simple_057",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the cell density of a biological sample based on its optical density and the experiment dilution.",
+        "name": "calculate_cell_density",
+        "parameters": {
+          "properties": {
+            "calibration_factor": {
+              "description": "The calibration factor to adjust the density, default value is 1e9 assuming cell density is in CFU/mL.",
+              "type": "float"
+            },
+            "dilution": {
+              "description": "The dilution factor applied during the experiment.",
+              "type": "integer"
+            },
+            "optical_density": {
+              "description": "The optical density of the sample, usually obtained from a spectrophotometer reading.",
+              "type": "float"
+            }
+          },
+          "required": [
+            "optical_density",
+            "dilution"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the cell density in a sample with an optical density of 0.6, where the experiment dilution is 5 times."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_57",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

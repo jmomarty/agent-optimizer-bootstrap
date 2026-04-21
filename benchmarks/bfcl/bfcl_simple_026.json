@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "distance": 50,
+      "duration": 2
+    },
+    "tool_name": "calculate_velocity"
+  },
+  "id": "bfcl_simple_026",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the velocity for a certain distance travelled within a specific duration.",
+        "name": "calculate_velocity",
+        "parameters": {
+          "properties": {
+            "distance": {
+              "description": "The distance travelled by the object, typically in kilometers.",
+              "type": "integer"
+            },
+            "duration": {
+              "description": "The duration of the journey, typically in hours.",
+              "type": "integer"
+            },
+            "unit": {
+              "description": "Optional parameter. The unit to return the velocity in. If not provided, the default is km/h.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "distance",
+            "duration"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the velocity of a car that travels a distance of 50 kilometers for a duration of 2 hours?"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_26",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

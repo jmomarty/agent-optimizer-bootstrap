@@ -1,0 +1,53 @@
+{
+  "expected_output": {
+    "arguments": {
+      "molecule": "ATP synthase",
+      "organelle": "mitochondria",
+      "specific_function": true
+    },
+    "tool_name": "cell_biology.function_lookup"
+  },
+  "id": "bfcl_simple_058",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Look up the function of a given molecule in a specified organelle.",
+        "name": "cell_biology.function_lookup",
+        "parameters": {
+          "properties": {
+            "molecule": {
+              "description": "The molecule of interest.",
+              "type": "string"
+            },
+            "organelle": {
+              "description": "The organelle of interest.",
+              "type": "string"
+            },
+            "specific_function": {
+              "description": "If set to true, a specific function of the molecule within the organelle will be provided, if such information exists.",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "molecule",
+            "organelle",
+            "specific_function"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "What is the function of ATP synthase in mitochondria?"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_58",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

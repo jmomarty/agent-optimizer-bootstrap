@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "height": 100,
+      "initial_velocity": 0
+    },
+    "tool_name": "calculate_final_speed"
+  },
+  "id": "bfcl_simple_032",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the final speed of an object dropped from a certain height without air resistance.",
+        "name": "calculate_final_speed",
+        "parameters": {
+          "properties": {
+            "gravity": {
+              "description": "The gravitational acceleration. Default is 9.8 m/s^2.",
+              "type": "float"
+            },
+            "height": {
+              "description": "The height from which the object is dropped.",
+              "type": "integer"
+            },
+            "initial_velocity": {
+              "description": "The initial velocity of the object.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "initial_velocity",
+            "height"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the final speed of an object dropped from 100 m without air resistance."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_32",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

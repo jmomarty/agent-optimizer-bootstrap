@@ -1,0 +1,46 @@
+{
+  "expected_output": {
+    "arguments": {
+      "number": 60,
+      "return_type": "dictionary"
+    },
+    "tool_name": "prime_factorize"
+  },
+  "id": "bfcl_simple_023",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the prime factorization of a given integer.",
+        "name": "prime_factorize",
+        "parameters": {
+          "properties": {
+            "number": {
+              "description": "The number for which to calculate the prime factorization.",
+              "type": "integer"
+            },
+            "return_type": {
+              "description": "Determines the format of the returned prime factorization. Can be 'list' for a list of all prime factors or 'dictionary' for a count of each prime factor. Default is 'list'.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "number"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "What is the prime factorization of the number 60? Return them in the form of dictionary"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_23",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

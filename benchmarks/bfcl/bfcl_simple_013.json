@@ -1,0 +1,57 @@
+{
+  "expected_output": {
+    "arguments": {
+      "function": "x**2",
+      "interval": [
+        1.0,
+        3.0
+      ]
+    },
+    "tool_name": "calculate_area_under_curve"
+  },
+  "id": "bfcl_simple_013",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the area under a mathematical function within a given interval.",
+        "name": "calculate_area_under_curve",
+        "parameters": {
+          "properties": {
+            "function": {
+              "description": "The mathematical function as a string.",
+              "type": "string"
+            },
+            "interval": {
+              "description": "An array that defines the interval to calculate the area under the curve from the start to the end point.",
+              "items": {
+                "type": "float"
+              },
+              "type": "array"
+            },
+            "method": {
+              "description": "The numerical method to approximate the area under the curve. The default value is 'trapezoidal'.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "function",
+            "interval"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the area under the curve y=x^2 from x=1 to x=3."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_13",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

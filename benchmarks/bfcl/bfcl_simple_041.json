@@ -1,0 +1,57 @@
+{
+  "expected_output": {
+    "arguments": {
+      "charge1": 5,
+      "charge2": 7,
+      "distance": 3
+    },
+    "tool_name": "electromagnetic_force"
+  },
+  "id": "bfcl_simple_041",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the electromagnetic force between two charges placed at a certain distance.",
+        "name": "electromagnetic_force",
+        "parameters": {
+          "properties": {
+            "charge1": {
+              "description": "The magnitude of the first charge in coulombs.",
+              "type": "integer"
+            },
+            "charge2": {
+              "description": "The magnitude of the second charge in coulombs.",
+              "type": "integer"
+            },
+            "distance": {
+              "description": "The distance between the two charges in meters.",
+              "type": "integer"
+            },
+            "medium_permittivity": {
+              "description": "The relative permittivity of the medium in which the charges are present. Default is 8.854e-12 (Vacuum Permittivity).",
+              "type": "float"
+            }
+          },
+          "required": [
+            "charge1",
+            "charge2",
+            "distance"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the electromagnetic force between two charges of 5C and 7C placed 3 meters apart."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_41",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

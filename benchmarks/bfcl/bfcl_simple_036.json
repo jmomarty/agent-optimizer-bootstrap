@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "destination": "Washington D.C.",
+      "origin": "New York City"
+    },
+    "tool_name": "get_shortest_driving_distance"
+  },
+  "id": "bfcl_simple_036",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the shortest driving distance between two locations.",
+        "name": "get_shortest_driving_distance",
+        "parameters": {
+          "properties": {
+            "destination": {
+              "description": "End point of the journey. You should format it as city name like Boston.",
+              "type": "string"
+            },
+            "origin": {
+              "description": "Starting point of the journey. You should format it as city name like Boston.",
+              "type": "string"
+            },
+            "unit": {
+              "description": "Preferred unit of distance (optional, default is 'km').",
+              "type": "string"
+            }
+          },
+          "required": [
+            "origin",
+            "destination"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Find the shortest driving distance between New York City and Washington D.C."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_36",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

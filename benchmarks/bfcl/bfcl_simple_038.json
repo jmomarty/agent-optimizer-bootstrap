@@ -1,0 +1,57 @@
+{
+  "expected_output": {
+    "arguments": {
+      "charge1": 1e-09,
+      "charge2": 2e-09,
+      "distance": 0.05
+    },
+    "tool_name": "calculate_electrostatic_potential"
+  },
+  "id": "bfcl_simple_038",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the electrostatic potential between two charged bodies using the principle of Coulomb's Law.",
+        "name": "calculate_electrostatic_potential",
+        "parameters": {
+          "properties": {
+            "charge1": {
+              "description": "The quantity of charge on the first body.",
+              "type": "float"
+            },
+            "charge2": {
+              "description": "The quantity of charge on the second body.",
+              "type": "float"
+            },
+            "constant": {
+              "description": "The value of the electrostatic constant. Default is 8.99e9.",
+              "type": "float"
+            },
+            "distance": {
+              "description": "The distance between the two bodies.",
+              "type": "float"
+            }
+          },
+          "required": [
+            "charge1",
+            "charge2",
+            "distance"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "What is the electrostatic potential between two charged bodies of 1e-9 and 2e-9 of distance 0.05?"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_38",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

@@ -1,0 +1,58 @@
+{
+  "expected_output": {
+    "arguments": {
+      "end_x": 3,
+      "function": "x**3",
+      "method": "simpson",
+      "start_x": -2
+    },
+    "tool_name": "integrate"
+  },
+  "id": "bfcl_simple_015",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the area under a curve for a specified function between two x values.",
+        "name": "integrate",
+        "parameters": {
+          "properties": {
+            "end_x": {
+              "description": "The ending x-value to integrate over.",
+              "type": "integer"
+            },
+            "function": {
+              "description": "The function to integrate, represented as a string. For example, 'x^3'",
+              "type": "string"
+            },
+            "method": {
+              "description": "The method of numerical integration to use. Choices are 'trapezoid' or 'simpson'. Default is 'trapezoid'.",
+              "type": "string"
+            },
+            "start_x": {
+              "description": "The starting x-value to integrate over.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "function",
+            "start_x",
+            "end_x"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the area under the curve from x = -2 to x = 3 for the function y = x^3 using simpson method."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_15",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

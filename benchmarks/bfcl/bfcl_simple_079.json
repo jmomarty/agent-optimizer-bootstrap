@@ -1,0 +1,58 @@
+{
+  "expected_output": {
+    "arguments": {
+      "bins": 5,
+      "data": [
+        85,
+        90,
+        88,
+        92,
+        86,
+        89,
+        91
+      ]
+    },
+    "tool_name": "create_histogram"
+  },
+  "id": "bfcl_simple_079",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Create a histogram based on provided data.",
+        "name": "create_histogram",
+        "parameters": {
+          "properties": {
+            "bins": {
+              "description": "The number of equal-width bins in the range. Default is 10.",
+              "type": "integer"
+            },
+            "data": {
+              "description": "The data for which histogram needs to be plotted.",
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "data",
+            "bins"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Create a histogram for student scores with the following data: 85, 90, 88, 92, 86, 89, 91 and set bin range to 5."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_79",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "dev"
+}

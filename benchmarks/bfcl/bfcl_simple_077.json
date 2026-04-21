@@ -1,0 +1,58 @@
+{
+  "expected_output": {
+    "arguments": {
+      "dietary_preference": [
+        "Vegan"
+      ],
+      "location": "Los Angeles, CA"
+    },
+    "tool_name": "restaurant.find_nearby"
+  },
+  "id": "bfcl_simple_077",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Locate nearby restaurants based on specific dietary preferences.",
+        "name": "restaurant.find_nearby",
+        "parameters": {
+          "properties": {
+            "dietary_preference": {
+              "description": "Dietary preference. Default is empty list.",
+              "items": {
+                "enum": [
+                  "Vegan",
+                  "Vegetarian",
+                  "Gluten-free",
+                  "Dairy-free",
+                  "Nut-free"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "location": {
+              "description": "The city and state, e.g. Los Angeles, CA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "location"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Find a nearby restaurant that serves vegan food in Los Angeles."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_77",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

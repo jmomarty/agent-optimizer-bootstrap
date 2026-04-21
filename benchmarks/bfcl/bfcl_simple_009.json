@@ -1,0 +1,45 @@
+{
+  "expected_output": {
+    "arguments": {
+      "radius": 5
+    },
+    "tool_name": "geometry.calculate_area_circle"
+  },
+  "id": "bfcl_simple_009",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the area of a circle given its radius.",
+        "name": "geometry.calculate_area_circle",
+        "parameters": {
+          "properties": {
+            "radius": {
+              "description": "The radius of the circle.",
+              "type": "integer"
+            },
+            "unit": {
+              "description": "The measurement unit of the radius (optional parameter, default is 'units').",
+              "type": "string"
+            }
+          },
+          "required": [
+            "radius"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the area of a circle with a radius of 5 units."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_9",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "dev"
+}

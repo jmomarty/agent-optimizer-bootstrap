@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "temp": 298,
+      "volume": 10
+    },
+    "tool_name": "calc_heat_capacity"
+  },
+  "id": "bfcl_simple_052",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the heat capacity at constant pressure of air using its temperature and volume.",
+        "name": "calc_heat_capacity",
+        "parameters": {
+          "properties": {
+            "gas": {
+              "description": "Type of gas, with 'air' as default.",
+              "type": "string"
+            },
+            "temp": {
+              "description": "The temperature of the gas in Kelvin.",
+              "type": "integer"
+            },
+            "volume": {
+              "description": "The volume of the gas in m^3.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "temp",
+            "volume"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the heat capacity at constant pressure for air, given its temperature is 298K and volume is 10 m^3."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_52",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

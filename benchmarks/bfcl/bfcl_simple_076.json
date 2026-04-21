@@ -1,0 +1,52 @@
+{
+  "expected_output": {
+    "arguments": {
+      "model": "Darwin",
+      "species": "Homo Sapiens",
+      "years": 50
+    },
+    "tool_name": "prediction.evolution"
+  },
+  "id": "bfcl_simple_076",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Predict the evolutionary rate for a specific species for a given timeframe.",
+        "name": "prediction.evolution",
+        "parameters": {
+          "properties": {
+            "model": {
+              "description": "The model used to make the prediction, options: 'Darwin', 'Lamarck', default is 'Darwin'.",
+              "type": "string"
+            },
+            "species": {
+              "description": "The species that the evolution rate will be predicted for.",
+              "type": "string"
+            },
+            "years": {
+              "description": "Number of years for the prediction.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "species",
+            "years"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Get me the predictions of the evolutionary rate for Homo Sapiens for next 50 years using Darwin model"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_76",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

@@ -1,0 +1,53 @@
+{
+  "expected_output": {
+    "arguments": {
+      "current_population": 35000,
+      "growth_rate": 0.015,
+      "years": 5
+    },
+    "tool_name": "elephant_population_estimate"
+  },
+  "id": "bfcl_simple_075",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Estimate future population of elephants given current population and growth rate.",
+        "name": "elephant_population_estimate",
+        "parameters": {
+          "properties": {
+            "current_population": {
+              "description": "The current number of elephants.",
+              "type": "integer"
+            },
+            "growth_rate": {
+              "description": "The annual population growth rate of elephants.",
+              "type": "float"
+            },
+            "years": {
+              "description": "The number of years to project the population.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "current_population",
+            "growth_rate",
+            "years"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Estimate the population size of elephants of 35000 in the next 5 years given the current growth rate of 0.015."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_75",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

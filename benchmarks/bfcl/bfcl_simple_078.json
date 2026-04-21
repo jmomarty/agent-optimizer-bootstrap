@@ -1,0 +1,52 @@
+{
+  "expected_output": {
+    "arguments": {
+      "days": 3,
+      "location": "Austin",
+      "temp_unit": "Celsius"
+    },
+    "tool_name": "average_temperature"
+  },
+  "id": "bfcl_simple_078",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Retrieves the average temperature for a specific location over the defined timeframe.",
+        "name": "average_temperature",
+        "parameters": {
+          "properties": {
+            "days": {
+              "description": "The number of days to get the average temperature for.",
+              "type": "integer"
+            },
+            "location": {
+              "description": "The city to get the average temperature for. It should format as city name such as Boston.",
+              "type": "string"
+            },
+            "temp_unit": {
+              "description": "The temperature unit ('Celsius' or 'Fahrenheit'). Default is 'Fahrenheit'.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "location",
+            "days"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Get the average temperature in Austin for the next 3 days in Celsius."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_78",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

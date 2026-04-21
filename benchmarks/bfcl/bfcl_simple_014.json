@@ -1,0 +1,45 @@
+{
+  "expected_output": {
+    "arguments": {
+      "function": "3x**2 + 2x - 1"
+    },
+    "tool_name": "calculate_derivative"
+  },
+  "id": "bfcl_simple_014",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the derivative of a polynomial function.",
+        "name": "calculate_derivative",
+        "parameters": {
+          "properties": {
+            "function": {
+              "description": "The polynomial function.",
+              "type": "string"
+            },
+            "x_value": {
+              "description": "The x-value at which the derivative is calculated. Optional, default to 0.00.",
+              "type": "float"
+            }
+          },
+          "required": [
+            "function"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the derivative of the function 3x^2 + 2x - 1."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_14",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "dev"
+}

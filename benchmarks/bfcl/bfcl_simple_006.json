@@ -1,0 +1,53 @@
+{
+  "expected_output": {
+    "arguments": {
+      "a": 2,
+      "b": 5,
+      "c": 3
+    },
+    "tool_name": "solve_quadratic"
+  },
+  "id": "bfcl_simple_006",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Find the roots of a quadratic equation. Returns both roots.",
+        "name": "solve_quadratic",
+        "parameters": {
+          "properties": {
+            "a": {
+              "description": "Coefficient of x\u00b2.",
+              "type": "integer"
+            },
+            "b": {
+              "description": "Coefficient of x.",
+              "type": "integer"
+            },
+            "c": {
+              "description": "Constant term.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "a",
+            "b",
+            "c"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "What are the roots of the quadratic equation where a=2, b=5 and c=3 ?"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_6",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

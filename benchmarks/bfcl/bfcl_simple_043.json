@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "current": 20,
+      "distance": 10
+    },
+    "tool_name": "calculate_magnetic_field_strength"
+  },
+  "id": "bfcl_simple_043",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the magnetic field strength at a point a certain distance away from a long wire carrying a current.",
+        "name": "calculate_magnetic_field_strength",
+        "parameters": {
+          "properties": {
+            "current": {
+              "description": "The current flowing through the wire in Amperes.",
+              "type": "integer"
+            },
+            "distance": {
+              "description": "The perpendicular distance from the wire to the point where the magnetic field is being calculated.",
+              "type": "integer"
+            },
+            "permeability": {
+              "description": "The permeability of the medium. Default is 12.57e-7 (Vacuum Permeability).",
+              "type": "float"
+            }
+          },
+          "required": [
+            "current",
+            "distance"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the magnetic field strength 10 meters away from a long wire carrying a current of 20 Amperes."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_43",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

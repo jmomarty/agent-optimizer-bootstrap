@@ -1,0 +1,55 @@
+{
+  "expected_output": {
+    "arguments": {
+      "end_location": "Melbourne",
+      "start_location": "Sydney"
+    },
+    "tool_name": "get_directions"
+  },
+  "id": "bfcl_simple_033",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Retrieve directions from one location to another.",
+        "name": "get_directions",
+        "parameters": {
+          "properties": {
+            "end_location": {
+              "description": "The destination point of the journey.",
+              "type": "string"
+            },
+            "route_type": {
+              "description": "Type of route to use (e.g., 'fastest', 'scenic'). Default is 'fastest'.",
+              "enum": [
+                "fastest",
+                "scenic"
+              ],
+              "type": "string"
+            },
+            "start_location": {
+              "description": "The starting point of the journey.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "start_location",
+            "end_location"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Get directions from Sydney to Melbourne using the fastest route."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_33",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

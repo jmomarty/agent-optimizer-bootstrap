@@ -1,0 +1,59 @@
+{
+  "expected_output": {
+    "arguments": {
+      "length": 100,
+      "preferences": [
+        "G",
+        "C"
+      ]
+    },
+    "tool_name": "generate_DNA_sequence"
+  },
+  "id": "bfcl_simple_071",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Generate a random DNA sequence with a specific length and nucleotide preference.",
+        "name": "generate_DNA_sequence",
+        "parameters": {
+          "properties": {
+            "length": {
+              "description": "The length of the DNA sequence to be generated.",
+              "type": "integer"
+            },
+            "preferences": {
+              "description": "Preferred nucleotides to include more frequently in the DNA sequence.",
+              "items": {
+                "enum": [
+                  "A",
+                  "T",
+                  "C",
+                  "G"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "length",
+            "preferences"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Generate a DNA sequence with 100 bases including more G (Guanine) and C (Cytosine)."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_71",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

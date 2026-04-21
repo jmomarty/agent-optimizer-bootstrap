@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "current": 5,
+      "radius": 4
+    },
+    "tool_name": "calculate_magnetic_field"
+  },
+  "id": "bfcl_simple_040",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the magnetic field produced at the center of a circular loop carrying current.",
+        "name": "calculate_magnetic_field",
+        "parameters": {
+          "properties": {
+            "current": {
+              "description": "The current through the circular loop in Amperes.",
+              "type": "integer"
+            },
+            "permeability": {
+              "description": "The magnetic permeability. Default is 12.57e10 (Vacuum Permeability).",
+              "type": "float"
+            },
+            "radius": {
+              "description": "The radius of the circular loop in meters.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "current",
+            "radius"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the magnetic field produced at the center of a circular loop carrying current of 5 Ampere with a radius of 4 meters"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_40",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

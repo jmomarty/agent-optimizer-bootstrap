@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "charge": 0.01,
+      "distance": 4
+    },
+    "tool_name": "calculate_electric_field_strength"
+  },
+  "id": "bfcl_simple_044",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the electric field strength at a certain distance from a point charge.",
+        "name": "calculate_electric_field_strength",
+        "parameters": {
+          "properties": {
+            "charge": {
+              "description": "The charge in Coulombs.",
+              "type": "float"
+            },
+            "distance": {
+              "description": "The distance from the charge in meters.",
+              "type": "integer"
+            },
+            "medium": {
+              "description": "The medium in which the charge and the point of calculation is located. Default is 'vacuum'.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "charge",
+            "distance"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the electric field strength 4 meters away from a charge of 0.01 Coulombs."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_44",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "dev"
+}

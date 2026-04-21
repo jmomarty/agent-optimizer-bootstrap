@@ -1,0 +1,60 @@
+{
+  "expected_output": {
+    "arguments": {
+      "activity_level": "lightly active",
+      "height": 70,
+      "weight": 150
+    },
+    "tool_name": "diabetes_prediction"
+  },
+  "id": "bfcl_simple_061",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Predict the likelihood of diabetes type 2 based on a person's weight and height.",
+        "name": "diabetes_prediction",
+        "parameters": {
+          "properties": {
+            "activity_level": {
+              "description": "Physical activity level of the person.",
+              "enum": [
+                "sedentary",
+                "lightly active",
+                "moderately active",
+                "very active",
+                "extra active"
+              ],
+              "type": "string"
+            },
+            "height": {
+              "description": "Height of the person in inches.",
+              "type": "integer"
+            },
+            "weight": {
+              "description": "Weight of the person in lbs.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "weight",
+            "height",
+            "activity_level"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Predict whether a person with weight 150lbs and height 5ft 10in who is lightly active will get type 2 diabetes."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_61",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

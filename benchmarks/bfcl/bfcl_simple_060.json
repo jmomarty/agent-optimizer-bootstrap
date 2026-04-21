@@ -1,0 +1,45 @@
+{
+  "expected_output": {
+    "arguments": {
+      "snp_id": "rs6034464"
+    },
+    "tool_name": "mutation_type.find"
+  },
+  "id": "bfcl_simple_060",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Finds the type of a genetic mutation based on its SNP (Single Nucleotide Polymorphism) ID.",
+        "name": "mutation_type.find",
+        "parameters": {
+          "properties": {
+            "snp_id": {
+              "description": "The ID of the Single Nucleotide Polymorphism (SNP) mutation.",
+              "type": "string"
+            },
+            "species": {
+              "description": "Species in which the SNP occurs, default is 'Homo sapiens' (Humans).",
+              "type": "string"
+            }
+          },
+          "required": [
+            "snp_id"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Find the type of gene mutation based on SNP (Single Nucleotide Polymorphism) ID rs6034464."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_60",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

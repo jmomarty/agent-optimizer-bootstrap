@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "x": 4,
+      "y": 5
+    },
+    "tool_name": "math.hypot"
+  },
+  "id": "bfcl_simple_002",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the Euclidean norm, sqrt(sum(squares)), the length of the vector from the origin to point (x, y) which is the hypotenuse of the right triangle.",
+        "name": "math.hypot",
+        "parameters": {
+          "properties": {
+            "x": {
+              "description": "The x-coordinate value.",
+              "type": "integer"
+            },
+            "y": {
+              "description": "The y-coordinate value.",
+              "type": "integer"
+            },
+            "z": {
+              "description": "Optional. The z-coordinate value. Default is 0.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "x",
+            "y"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the hypotenuse of a right triangle given the lengths of the other two sides as 4 and 5."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_2",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

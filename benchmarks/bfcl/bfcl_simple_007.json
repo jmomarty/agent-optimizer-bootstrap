@@ -1,0 +1,46 @@
+{
+  "expected_output": {
+    "arguments": {
+      "radius": 4,
+      "unit": "inches"
+    },
+    "tool_name": "calculate_circumference"
+  },
+  "id": "bfcl_simple_007",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculates the circumference of a circle with a given radius.",
+        "name": "calculate_circumference",
+        "parameters": {
+          "properties": {
+            "radius": {
+              "description": "The radius of the circle in the unit given.",
+              "type": "integer"
+            },
+            "unit": {
+              "description": "The unit of measurement for the radius. Default is 'cm'.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "radius"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "What is the circumference of a circle with a radius of 4 inches?"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_7",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

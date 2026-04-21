@@ -1,0 +1,52 @@
+{
+  "expected_output": {
+    "arguments": {
+      "location": "Amazon rainforest",
+      "time_frame": "six_months"
+    },
+    "tool_name": "ecology_data.precipitation_stats"
+  },
+  "id": "bfcl_simple_066",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Retrieve precipitation data for a specified location and time period.",
+        "name": "ecology_data.precipitation_stats",
+        "parameters": {
+          "properties": {
+            "location": {
+              "description": "The name of the location, e.g., 'Amazon rainforest'.",
+              "type": "string"
+            },
+            "time_frame": {
+              "description": "The time period for which data is required.",
+              "enum": [
+                "six_months",
+                "year",
+                "five_years"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "location",
+            "time_frame"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Get me data on average precipitation in the Amazon rainforest for the last six months."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_66",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "miles_driven": 1500,
+      "vehicle_type": "gas"
+    },
+    "tool_name": "calculate_vehicle_emission"
+  },
+  "id": "bfcl_simple_070",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the annual carbon emissions produced by a specific type of vehicle based on mileage.",
+        "name": "calculate_vehicle_emission",
+        "parameters": {
+          "properties": {
+            "emission_factor": {
+              "description": "Optional emission factor to calculate emissions, in g/mile. Default factor is 355.48.",
+              "type": "float"
+            },
+            "miles_driven": {
+              "description": "The number of miles driven per year.",
+              "type": "integer"
+            },
+            "vehicle_type": {
+              "description": "The type of vehicle. 'gas' refers to a gasoline vehicle, 'diesel' refers to a diesel vehicle, and 'EV' refers to an electric vehicle.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "vehicle_type",
+            "miles_driven"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "What is the carbon footprint of a gas-powered vehicle driving 1500 miles in a year?"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_70",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

@@ -1,0 +1,49 @@
+{
+  "expected_output": {
+    "arguments": {
+      "height": 150
+    },
+    "tool_name": "calculate_final_velocity"
+  },
+  "id": "bfcl_simple_025",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the final velocity of a free falling object given the height it's dropped from, the initial velocity and acceleration due to gravity. Ignore air resistance.",
+        "name": "calculate_final_velocity",
+        "parameters": {
+          "properties": {
+            "gravity": {
+              "description": "Acceleration due to gravity. Default value is 9.81 m/s^2, earth's gravity.",
+              "type": "float"
+            },
+            "height": {
+              "description": "The height the object is dropped from, in meters.",
+              "type": "integer"
+            },
+            "initial_velocity": {
+              "description": "The initial velocity of the object in m/s. Default is zero.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "height"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the final velocity of an object falling from a 150 meter building, assuming initial velocity is zero."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_25",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

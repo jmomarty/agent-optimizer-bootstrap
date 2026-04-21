@@ -1,0 +1,46 @@
+{
+  "expected_output": {
+    "arguments": {
+      "cell_compartment": "plasma membrane"
+    },
+    "tool_name": "cellbio.get_proteins"
+  },
+  "id": "bfcl_simple_056",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Get the list of proteins in a specific cell compartment.",
+        "name": "cellbio.get_proteins",
+        "parameters": {
+          "properties": {
+            "cell_compartment": {
+              "description": "The specific cell compartment.",
+              "type": "string"
+            },
+            "include_description": {
+              "default": "false",
+              "description": "Set true if you want a brief description of each protein.",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "cell_compartment"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "What are the names of proteins found in the plasma membrane?"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_56",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

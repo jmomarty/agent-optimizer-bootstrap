@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "base": 6,
+      "height": 10
+    },
+    "tool_name": "calculate_area"
+  },
+  "id": "bfcl_simple_010",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the area of a right-angled triangle given the lengths of its base and height.",
+        "name": "calculate_area",
+        "parameters": {
+          "properties": {
+            "base": {
+              "description": "The length of the base of the right-angled triangle.",
+              "type": "integer"
+            },
+            "height": {
+              "description": "The height of the right-angled triangle.",
+              "type": "integer"
+            },
+            "unit": {
+              "description": "The unit of measure used. Defaults to 'cm'.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "base",
+            "height"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the area of a right-angled triangle given the lengths of its base and height as 6cm and 10cm."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_10",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

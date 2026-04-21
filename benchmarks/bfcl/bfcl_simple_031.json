@@ -1,0 +1,53 @@
+{
+  "expected_output": {
+    "arguments": {
+      "acceleration": 9.8,
+      "initial_velocity": 0,
+      "time": 5
+    },
+    "tool_name": "calculate_final_velocity"
+  },
+  "id": "bfcl_simple_031",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the final velocity of an object under constant acceleration, knowing its initial velocity, acceleration, and time of acceleration.",
+        "name": "calculate_final_velocity",
+        "parameters": {
+          "properties": {
+            "acceleration": {
+              "description": "The acceleration of the object.",
+              "type": "float"
+            },
+            "initial_velocity": {
+              "description": "The initial velocity of the object.",
+              "type": "integer"
+            },
+            "time": {
+              "description": "The time of acceleration.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "initial_velocity",
+            "acceleration",
+            "time"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the final velocity of an object, knowing that it started from rest, accelerated at a rate of 9.8 m/s^2 for a duration of 5 seconds."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_31",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

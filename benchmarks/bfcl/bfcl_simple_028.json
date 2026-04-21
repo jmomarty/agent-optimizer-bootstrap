@@ -1,0 +1,53 @@
+{
+  "expected_output": {
+    "arguments": {
+      "acceleration": 9.8,
+      "initial_velocity": 10,
+      "time": 5
+    },
+    "tool_name": "calculate_displacement"
+  },
+  "id": "bfcl_simple_028",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculates the displacement of an object in motion given initial velocity, time, and acceleration.",
+        "name": "calculate_displacement",
+        "parameters": {
+          "properties": {
+            "acceleration": {
+              "default": 0,
+              "description": "The acceleration of the object in m/s^2.",
+              "type": "float"
+            },
+            "initial_velocity": {
+              "description": "The initial velocity of the object in m/s.",
+              "type": "integer"
+            },
+            "time": {
+              "description": "The time in seconds that the object has been in motion.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "initial_velocity",
+            "time"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the displacement of a car given the initial velocity of 10 and acceleeration of 9.8 within 5 seconds."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_28",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

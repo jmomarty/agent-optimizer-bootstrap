@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "function": "2x**2",
+      "value": 1
+    },
+    "tool_name": "calculus.derivative"
+  },
+  "id": "bfcl_simple_016",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Compute the derivative of a function at a specific value.",
+        "name": "calculus.derivative",
+        "parameters": {
+          "properties": {
+            "function": {
+              "description": "The function to calculate the derivative of.",
+              "type": "string"
+            },
+            "function_variable": {
+              "description": "The variable present in the function, for instance x or y, etc. Default is 'x'.",
+              "type": "string"
+            },
+            "value": {
+              "description": "The value where the derivative needs to be calculated at.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "function",
+            "value"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the derivative of the function 2x^2 at x = 1."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_16",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

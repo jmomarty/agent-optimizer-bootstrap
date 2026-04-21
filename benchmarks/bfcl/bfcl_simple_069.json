@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "location": "Mississippi river",
+      "species": true,
+      "year": 2020
+    },
+    "tool_name": "ecology.get_turtle_population"
+  },
+  "id": "bfcl_simple_069",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Get the population and species of turtles in a specific location.",
+        "name": "ecology.get_turtle_population",
+        "parameters": {
+          "properties": {
+            "location": {
+              "description": "The name of the location.",
+              "type": "string"
+            },
+            "species": {
+              "description": "Whether to include species information. Default is false.",
+              "type": "boolean"
+            },
+            "year": {
+              "description": "The year of the data requested. Default is 2001.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "location"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Find out the population and species of turtles in Mississippi river in 2020."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_69",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "dev"
+}

@@ -1,0 +1,46 @@
+{
+  "expected_output": {
+    "arguments": {
+      "location": "New York, NY",
+      "operating_hours": 23
+    },
+    "tool_name": "vegan_restaurant.find_nearby"
+  },
+  "id": "bfcl_simple_035",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Locate nearby vegan restaurants based on specific criteria like operating hours.",
+        "name": "vegan_restaurant.find_nearby",
+        "parameters": {
+          "properties": {
+            "location": {
+              "description": "The city and state, e.g. New York, NY, you should format it as City, State.",
+              "type": "string"
+            },
+            "operating_hours": {
+              "description": "Preferred latest closing time of the restaurant. E.g. if 11 is given, then restaurants that close at or after 11 PM will be considered. This is in 24 hour format. Default is 24.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "location"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Find an all vegan restaurant in New York that opens until at least 11 PM."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_35",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

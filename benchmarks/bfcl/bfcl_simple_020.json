@@ -1,0 +1,47 @@
+{
+  "expected_output": {
+    "arguments": {
+      "number1": 36,
+      "number2": 24
+    },
+    "tool_name": "math.hcf"
+  },
+  "id": "bfcl_simple_020",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the highest common factor of two numbers.",
+        "name": "math.hcf",
+        "parameters": {
+          "properties": {
+            "number1": {
+              "description": "First number.",
+              "type": "integer"
+            },
+            "number2": {
+              "description": "Second number.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "number1",
+            "number2"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Find the highest common factor of 36 and 24."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_20",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

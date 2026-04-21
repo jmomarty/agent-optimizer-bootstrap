@@ -1,0 +1,41 @@
+{
+  "expected_output": {
+    "arguments": {
+      "number": 5
+    },
+    "tool_name": "math.factorial"
+  },
+  "id": "bfcl_simple_001",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the factorial of a given number.",
+        "name": "math.factorial",
+        "parameters": {
+          "properties": {
+            "number": {
+              "description": "The number for which factorial needs to be calculated.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "number"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the factorial of 5 using math functions."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_1",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

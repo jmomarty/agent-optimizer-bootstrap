@@ -1,0 +1,58 @@
+{
+  "expected_output": {
+    "arguments": {
+      "a": 3,
+      "b": -11,
+      "c": -4,
+      "root_type": "all"
+    },
+    "tool_name": "solve_quadratic"
+  },
+  "id": "bfcl_simple_005",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Solve a quadratic equation given coefficients a, b, and c. If optional 'root_type' is 'real', the function will only return real roots. If not specified, function may return complex roots.",
+        "name": "solve_quadratic",
+        "parameters": {
+          "properties": {
+            "a": {
+              "description": "The coefficient of the squared term in the quadratic equation.",
+              "type": "integer"
+            },
+            "b": {
+              "description": "The coefficient of the linear term in the quadratic equation.",
+              "type": "integer"
+            },
+            "c": {
+              "description": "The constant term in the quadratic equation.",
+              "type": "integer"
+            },
+            "root_type": {
+              "description": "The type of roots to return: 'real' for real roots, 'all' for both real and complex roots. Default value is 'real'.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "a",
+            "b",
+            "c"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Find all the roots of a quadratic equation given coefficients a = 3, b = -11, and c = -4."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_5",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

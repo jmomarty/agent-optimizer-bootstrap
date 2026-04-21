@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "species1": "Human",
+      "species2": "Chimp"
+    },
+    "tool_name": "genetics.calculate_similarity"
+  },
+  "id": "bfcl_simple_063",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculates the genetic similarity between two species based on their DNA sequences.",
+        "name": "genetics.calculate_similarity",
+        "parameters": {
+          "properties": {
+            "format": {
+              "description": "The format of the result (percentage or fraction). Default is percentage.",
+              "type": "string"
+            },
+            "species1": {
+              "description": "The first species to compare.",
+              "type": "string"
+            },
+            "species2": {
+              "description": "The second species to compare.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "species1",
+            "species2"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Find out how genetically similar a human and a chimp are in percentage."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_63",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

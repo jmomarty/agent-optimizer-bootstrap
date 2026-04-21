@@ -1,0 +1,47 @@
+{
+  "expected_output": {
+    "arguments": {
+      "sea_level": 5000,
+      "substance": "water"
+    },
+    "tool_name": "get_boiling_melting_points"
+  },
+  "id": "bfcl_simple_047",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Retrieve the boiling point and melting point of a substance based on its name and the sea level.",
+        "name": "get_boiling_melting_points",
+        "parameters": {
+          "properties": {
+            "sea_level": {
+              "description": "The sea level in meters.",
+              "type": "integer"
+            },
+            "substance": {
+              "description": "The name of the substance.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "substance",
+            "sea_level"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Find the boiling point and melting point of water under the sea level of 5000m."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_47",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

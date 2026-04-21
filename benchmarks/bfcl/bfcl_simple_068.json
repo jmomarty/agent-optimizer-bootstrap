@@ -1,0 +1,52 @@
+{
+  "expected_output": {
+    "arguments": {
+      "include_human_impact": true,
+      "location": "Yellowstone National Park",
+      "years": 5
+    },
+    "tool_name": "forest_growth_forecast"
+  },
+  "id": "bfcl_simple_068",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Predicts the forest growth over the next N years based on current trends.",
+        "name": "forest_growth_forecast",
+        "parameters": {
+          "properties": {
+            "include_human_impact": {
+              "description": "Whether or not to include the impact of human activities in the forecast. If not provided, defaults to false.",
+              "type": "boolean"
+            },
+            "location": {
+              "description": "The location where you want to predict forest growth.",
+              "type": "string"
+            },
+            "years": {
+              "description": "The number of years for the forecast.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "location",
+            "years"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Predict the growth of forest in Yellowstone National Park for the next 5 years including human impact."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_68",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

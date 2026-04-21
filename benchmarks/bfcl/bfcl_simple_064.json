@@ -1,0 +1,52 @@
+{
+  "expected_output": {
+    "arguments": {
+      "allele_frequency": 0.3,
+      "genotype": "AA"
+    },
+    "tool_name": "calculate_genotype_frequency"
+  },
+  "id": "bfcl_simple_064",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the frequency of homozygous dominant genotype based on the allele frequency using Hardy Weinberg Principle.",
+        "name": "calculate_genotype_frequency",
+        "parameters": {
+          "properties": {
+            "allele_frequency": {
+              "description": "The frequency of the dominant allele in the population.",
+              "type": "float"
+            },
+            "genotype": {
+              "description": "The genotype which frequency is needed.",
+              "enum": [
+                "AA",
+                "Aa",
+                "aa"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "allele_frequency",
+            "genotype"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "What is the genotype frequency of AA genotype in a population, given that allele frequency of A is 0.3?"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_64",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "dev"
+}

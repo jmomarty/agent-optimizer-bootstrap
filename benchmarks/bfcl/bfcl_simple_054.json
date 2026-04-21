@@ -1,0 +1,46 @@
+{
+  "expected_output": {
+    "arguments": {
+      "gene": "BRCA1"
+    },
+    "tool_name": "get_protein_sequence"
+  },
+  "id": "bfcl_simple_054",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Retrieve the protein sequence encoded by a human gene.",
+        "name": "get_protein_sequence",
+        "parameters": {
+          "properties": {
+            "gene": {
+              "description": "The human gene of interest.",
+              "type": "string"
+            },
+            "species": {
+              "default": "Homo sapiens",
+              "description": "The species for which the gene is to be analyzed.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "gene"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Identify the protein sequence of a given human gene 'BRCA1'."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_54",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "dev"
+}

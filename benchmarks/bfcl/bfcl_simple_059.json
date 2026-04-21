@@ -1,0 +1,47 @@
+{
+  "expected_output": {
+    "arguments": {
+      "compound": "C6H12O6",
+      "to_unit": "grams/mole"
+    },
+    "tool_name": "calculate_molecular_weight"
+  },
+  "id": "bfcl_simple_059",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the molecular weight of a compound given the compound formula.",
+        "name": "calculate_molecular_weight",
+        "parameters": {
+          "properties": {
+            "compound": {
+              "description": "The molecular formula of the compound.",
+              "type": "string"
+            },
+            "to_unit": {
+              "description": "The unit in which to return the result.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "compound",
+            "to_unit"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the molecular weight of Glucose (C6H12O6) in grams/mole."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_59",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "dev"
+}

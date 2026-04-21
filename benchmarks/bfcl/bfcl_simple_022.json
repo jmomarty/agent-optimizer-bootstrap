@@ -1,0 +1,47 @@
+{
+  "expected_output": {
+    "arguments": {
+      "num1": 12,
+      "num2": 15
+    },
+    "tool_name": "math.gcd"
+  },
+  "id": "bfcl_simple_022",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the greatest common divisor (gcd) of the two integers.",
+        "name": "math.gcd",
+        "parameters": {
+          "properties": {
+            "num1": {
+              "description": "The first number.",
+              "type": "integer"
+            },
+            "num2": {
+              "description": "The second number.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "num1",
+            "num2"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the greatest common divisor of two given numbers, for example 12 and 15."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_22",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

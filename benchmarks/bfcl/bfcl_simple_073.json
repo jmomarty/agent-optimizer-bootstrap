@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "country": "United States",
+      "years": 20
+    },
+    "tool_name": "population_projections"
+  },
+  "id": "bfcl_simple_073",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculates the projected population growth based on the current growth rate.",
+        "name": "population_projections",
+        "parameters": {
+          "properties": {
+            "country": {
+              "description": "The country for which to calculate the population projection.",
+              "type": "string"
+            },
+            "growth_rate": {
+              "description": "Optional parameter to specify the growth rate, in percentage. Default is 1.2.",
+              "type": "float"
+            },
+            "years": {
+              "description": "Number of years for the projection.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "country",
+            "years"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "What's the projected population growth in United States in the next 20 years?"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_73",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

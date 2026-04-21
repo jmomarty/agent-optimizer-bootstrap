@@ -1,0 +1,64 @@
+{
+  "expected_output": {
+    "arguments": {
+      "final_temperature": 100,
+      "initial_temperature": 0,
+      "mass": 1,
+      "substance": "ice"
+    },
+    "tool_name": "entropy_change.calculate"
+  },
+  "id": "bfcl_simple_050",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the change in entropy for a mass of a specific substance under set initial and final conditions.",
+        "name": "entropy_change.calculate",
+        "parameters": {
+          "properties": {
+            "final_temperature": {
+              "description": "The final temperature of the substance in degree Celsius.",
+              "type": "integer"
+            },
+            "initial_temperature": {
+              "description": "The initial temperature of the substance in degree Celsius.",
+              "type": "integer"
+            },
+            "mass": {
+              "description": "The mass of the substance in kg.",
+              "type": "integer"
+            },
+            "pressure": {
+              "default": 1,
+              "description": "The pressure the substance is under in atmospheres.",
+              "type": "integer"
+            },
+            "substance": {
+              "description": "The substance for which the change in entropy is calculated.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "substance",
+            "mass",
+            "initial_temperature",
+            "final_temperature"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "What is the change in entropy in Joules per Kelvin of a 1kg ice block at 0\u00b0C if it is heated to 100\u00b0C under 1 atmosphere of pressure?"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_50",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

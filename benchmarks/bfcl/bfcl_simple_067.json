@@ -1,0 +1,57 @@
+{
+  "expected_output": {
+    "arguments": {
+      "color": "green",
+      "habitat": "forest",
+      "size": "small"
+    },
+    "tool_name": "identify_bird"
+  },
+  "id": "bfcl_simple_067",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Identify a bird species based on certain characteristics.",
+        "name": "identify_bird",
+        "parameters": {
+          "properties": {
+            "color": {
+              "description": "Color of the bird.",
+              "type": "string"
+            },
+            "habitat": {
+              "description": "Habitat of the bird.",
+              "type": "string"
+            },
+            "size": {
+              "description": "Size of the bird. Default is 'small'",
+              "enum": [
+                "small",
+                "medium",
+                "large"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "color",
+            "habitat"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Identify a small green bird in forest."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_67",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

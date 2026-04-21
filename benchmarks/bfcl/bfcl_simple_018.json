@@ -1,0 +1,41 @@
+{
+  "expected_output": {
+    "arguments": {
+      "number": 123456
+    },
+    "tool_name": "number_analysis.prime_factors"
+  },
+  "id": "bfcl_simple_018",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Compute the prime factors of a number.",
+        "name": "number_analysis.prime_factors",
+        "parameters": {
+          "properties": {
+            "number": {
+              "description": "The number to be factored.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "number"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Find the prime factors of the number 123456."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_18",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

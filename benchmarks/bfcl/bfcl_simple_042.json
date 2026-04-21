@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "capacitance": 0.0001,
+      "inductance": 0.05
+    },
+    "tool_name": "calculate_resonant_frequency"
+  },
+  "id": "bfcl_simple_042",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the resonant frequency of an LC (inductor-capacitor) circuit.",
+        "name": "calculate_resonant_frequency",
+        "parameters": {
+          "properties": {
+            "capacitance": {
+              "description": "The capacitance (C) in farads (F).",
+              "type": "float"
+            },
+            "inductance": {
+              "description": "The inductance (L) in henries (H).",
+              "type": "float"
+            },
+            "round_off": {
+              "description": "Rounding off the result to a certain decimal places, default is 2.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "inductance",
+            "capacitance"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the resonant frequency of an LC circuit given capacitance of 100\u00b5F and inductance of 50mH."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_42",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

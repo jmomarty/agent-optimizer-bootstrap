@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "charge": 2,
+      "distance": 3
+    },
+    "tool_name": "calculate_electric_field"
+  },
+  "id": "bfcl_simple_039",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the electric field produced by a charge at a certain distance.",
+        "name": "calculate_electric_field",
+        "parameters": {
+          "properties": {
+            "charge": {
+              "description": "Charge in coulombs producing the electric field.",
+              "type": "integer"
+            },
+            "distance": {
+              "description": "Distance from the charge in meters where the field is being measured.",
+              "type": "integer"
+            },
+            "permitivity": {
+              "description": "Permitivity of the space where field is being calculated, default is 8.854e-12.",
+              "type": "float"
+            }
+          },
+          "required": [
+            "charge",
+            "distance"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the electric field at a point 3 meters away from a charge of 2 coulombs."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_39",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "dev"
+}

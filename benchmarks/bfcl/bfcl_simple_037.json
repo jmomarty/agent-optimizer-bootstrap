@@ -1,0 +1,58 @@
+{
+  "expected_output": {
+    "arguments": {
+      "end_location": "Los Angeles",
+      "start_location": "San Francisco",
+      "stops": [
+        "Santa Barbara",
+        "Monterey"
+      ]
+    },
+    "tool_name": "route.estimate_time"
+  },
+  "id": "bfcl_simple_037",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Estimate the travel time for a specific route with optional stops.",
+        "name": "route.estimate_time",
+        "parameters": {
+          "properties": {
+            "end_location": {
+              "description": "The destination for the journey. It should be format as city name such as Boston.",
+              "type": "string"
+            },
+            "start_location": {
+              "description": "The starting point for the journey. It should be format as city name such as Boston.",
+              "type": "string"
+            },
+            "stops": {
+              "description": "Additional cities or points of interest to stop at during the journey. Default is an empty list.",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "start_location",
+            "end_location"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Find the estimated travel time by car from San Francisco to Los Angeles with stops at Santa Barbara and Monterey."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_37",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

@@ -1,0 +1,63 @@
+{
+  "expected_output": {
+    "arguments": {
+      "mass1": 20,
+      "mass2": 15,
+      "temperature1": 30,
+      "temperature2": 60
+    },
+    "tool_name": "calculate_final_temperature"
+  },
+  "id": "bfcl_simple_046",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculates the final equilibrium temperature after mixing two bodies with different masses and temperatures",
+        "name": "calculate_final_temperature",
+        "parameters": {
+          "properties": {
+            "mass1": {
+              "description": "The mass of the first body (kg).",
+              "type": "integer"
+            },
+            "mass2": {
+              "description": "The mass of the second body (kg).",
+              "type": "integer"
+            },
+            "specific_heat_capacity": {
+              "description": "The specific heat capacity of the bodies in kJ/kg/K. If not provided, will default to that of water at room temperature, which is 4.2 kJ/kg/K.",
+              "type": "float"
+            },
+            "temperature1": {
+              "description": "The initial temperature of the first body (Celsius).",
+              "type": "integer"
+            },
+            "temperature2": {
+              "description": "The initial temperature of the second body (Celsius).",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "mass1",
+            "temperature1",
+            "mass2",
+            "temperature2"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the final temperature when 20 kg of water at 30 degree Celsius is mixed with 15 kg of water at 60 degree Celsius."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_46",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

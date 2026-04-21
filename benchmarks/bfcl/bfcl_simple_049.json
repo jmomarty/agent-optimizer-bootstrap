@@ -1,0 +1,46 @@
+{
+  "expected_output": {
+    "arguments": {
+      "atm_pressure": 1,
+      "gauge_pressure": 2
+    },
+    "tool_name": "calc_absolute_pressure"
+  },
+  "id": "bfcl_simple_049",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculates the absolute pressure from gauge and atmospheric pressures.",
+        "name": "calc_absolute_pressure",
+        "parameters": {
+          "properties": {
+            "atm_pressure": {
+              "description": "The atmospheric pressure in atmospheres (atm). Default is 1 atm if not provided.",
+              "type": "integer"
+            },
+            "gauge_pressure": {
+              "description": "The gauge pressure in atmospheres (atm). Must be provided.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "gauge_pressure"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the absolute pressure in pascals given atmospheric pressure of 1 atm and a gauge pressure of 2 atm."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_49",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "dev"
+}

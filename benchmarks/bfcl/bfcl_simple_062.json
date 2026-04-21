@@ -1,0 +1,56 @@
+{
+  "expected_output": {
+    "arguments": {
+      "reference_sequence": "AGTCCATCGAACGTACGTACG",
+      "sequence": "AGTCGATCGAACGTACGTACG"
+    },
+    "tool_name": "analyze_dna_sequence"
+  },
+  "id": "bfcl_simple_062",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Analyzes the DNA sequence based on a reference sequence and return any potential mutations.",
+        "name": "analyze_dna_sequence",
+        "parameters": {
+          "properties": {
+            "mutation_type": {
+              "description": "Type of the mutation to be looked for in the sequence. Default to 'substitution'.",
+              "enum": [
+                "insertion",
+                "deletion",
+                "substitution"
+              ],
+              "type": "string"
+            },
+            "reference_sequence": {
+              "description": "The reference DNA sequence.",
+              "type": "string"
+            },
+            "sequence": {
+              "description": "The DNA sequence to be analyzed.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "sequence",
+            "reference_sequence"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Analyze the DNA sequence 'AGTCGATCGAACGTACGTACG' for any potential substitution mutations based on a reference sequence 'AGTCCATCGAACGTACGTACG'."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_62",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

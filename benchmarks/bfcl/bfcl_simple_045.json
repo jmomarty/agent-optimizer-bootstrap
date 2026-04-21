@@ -1,0 +1,51 @@
+{
+  "expected_output": {
+    "arguments": {
+      "mass": 100,
+      "phase_transition": "vaporization"
+    },
+    "tool_name": "thermo.calculate_energy"
+  },
+  "id": "bfcl_simple_045",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the energy required or released during a phase change using mass, the phase transition temperature and the specific latent heat.",
+        "name": "thermo.calculate_energy",
+        "parameters": {
+          "properties": {
+            "mass": {
+              "description": "Mass of the substance in grams.",
+              "type": "integer"
+            },
+            "phase_transition": {
+              "description": "Phase transition. Can be 'melting', 'freezing', 'vaporization', 'condensation'.",
+              "type": "string"
+            },
+            "substance": {
+              "description": "The substance which is undergoing phase change, default is 'water'",
+              "type": "string"
+            }
+          },
+          "required": [
+            "mass",
+            "phase_transition"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the energy (in Joules) absorbed or released during the phase change of 100g of water from liquid to steam at its boiling point."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_45",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

@@ -1,0 +1,59 @@
+{
+  "expected_output": {
+    "arguments": {
+      "trait_contributions": [
+        0.4,
+        0.6
+      ],
+      "trait_values": [
+        0.8,
+        0.7
+      ]
+    },
+    "tool_name": "calculate_fitness"
+  },
+  "id": "bfcl_simple_072",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the expected evolutionary fitness of a creature based on the individual values and contributions of its traits.",
+        "name": "calculate_fitness",
+        "parameters": {
+          "properties": {
+            "trait_contributions": {
+              "description": "List of the percentage contributions of each trait to the overall fitness, which must sum to 1.",
+              "items": {
+                "type": "float"
+              },
+              "type": "array"
+            },
+            "trait_values": {
+              "description": "List of trait values, which are decimal numbers between 0 and 1, where 1 represents the trait maximally contributing to fitness.",
+              "items": {
+                "type": "float"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "trait_values",
+            "trait_contributions"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the expected evolutionary fitness of a creature, with trait A contributing to 40% of the fitness and trait B contributing 60%, if trait A has a value of 0.8 and trait B a value of 0.7."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_72",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

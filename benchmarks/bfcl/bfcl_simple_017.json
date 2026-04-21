@@ -1,0 +1,47 @@
+{
+  "expected_output": {
+    "arguments": {
+      "formatted": true,
+      "number": 450
+    },
+    "tool_name": "get_prime_factors"
+  },
+  "id": "bfcl_simple_017",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Function to retrieve prime factors of a number.",
+        "name": "get_prime_factors",
+        "parameters": {
+          "properties": {
+            "formatted": {
+              "description": "Return formatted string if true, array if false. Default is true.",
+              "type": "boolean"
+            },
+            "number": {
+              "description": "Number for which prime factors need to be calculated",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "number",
+            "formatted"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Find the prime factors of 450"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_17",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}

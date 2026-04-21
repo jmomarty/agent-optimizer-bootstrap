@@ -1,0 +1,57 @@
+{
+  "expected_output": {
+    "arguments": {
+      "duplication_frequency": 1,
+      "duration": 6,
+      "start_population": 5000
+    },
+    "tool_name": "calculate_bacteria_evolution_rate"
+  },
+  "id": "bfcl_simple_074",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Calculate the evolution rate of bacteria given the starting number, duplication frequency and total duration.",
+        "name": "calculate_bacteria_evolution_rate",
+        "parameters": {
+          "properties": {
+            "duplication_frequency": {
+              "description": "The frequency of bacteria duplication per hour.",
+              "type": "integer"
+            },
+            "duration": {
+              "description": "Total duration in hours.",
+              "type": "integer"
+            },
+            "generation_time": {
+              "description": "The average generation time of the bacteria in minutes. Default is 20 minutes",
+              "type": "integer"
+            },
+            "start_population": {
+              "description": "The starting population of bacteria.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "start_population",
+            "duplication_frequency",
+            "duration"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Calculate the evolution rate of a bacteria population, start with 5000 bacteria, each bacteria duplicates every hour for 6 hours."
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_74",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "dev"
+}

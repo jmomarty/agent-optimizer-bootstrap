@@ -131,16 +131,18 @@ For each candidate:
 
 ## Benchmark Direction
 
-The benchmark is mostly synthetic smoke-test data: tiny, local, and fast. It
-also includes a few adapted real benchmark samples under
-`benchmarks/real_samples/` to probe more realistic model-input shapes without
-changing the lightweight harness.
+The benchmark is BFCL-primary with a tiny synthetic smoke subset. BFCL tasks
+live under `benchmarks/bfcl/` and are adapted from the Berkeley Function
+Calling Leaderboard into the repo's local JSON protocol.
 
-Future benchmark work may expand that real-sample set using the same local JSON
-protocol. Prefer 10-30 curated examples first, not a full migration. Check
-licenses and data shape before importing samples from sources such as
-SWE-bench, tau-bench, BFCL, or GAIA. Do not include gated data, private test
-data, or sources whose terms restrict redistribution.
+The synthetic tasks remain only to smoke-test the harness across docs,
+structured extraction, and terminal command task kinds. They should not dominate
+optimizer selection.
+
+Future benchmark work may expand the real-sample set using the same local JSON
+protocol. Check licenses and data shape before importing samples from sources
+such as API-Bank, tau-bench, Terminal-Bench, SWE-bench, or GAIA. Do not include
+gated data, private test data, or sources whose terms restrict redistribution.
 
 Do not mix real benchmark migration into a normal optimizer candidate unless
 the human explicitly asks for benchmark work.

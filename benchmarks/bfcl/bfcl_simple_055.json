@@ -1,0 +1,47 @@
+{
+  "expected_output": {
+    "arguments": {
+      "cell_type": "human",
+      "detailed": true
+    },
+    "tool_name": "biology.get_cell_info"
+  },
+  "id": "bfcl_simple_055",
+  "instruction": "Select the single intended function call for the user request. Return JSON with keys tool_name and arguments. Include only arguments that should be supplied explicitly.",
+  "kind": "structured_extract",
+  "record": {
+    "available_functions": [
+      {
+        "description": "Retrieve information about the structure and functioning of a specified type of cell",
+        "name": "biology.get_cell_info",
+        "parameters": {
+          "properties": {
+            "cell_type": {
+              "description": "Type of cell you want information about",
+              "type": "string"
+            },
+            "detailed": {
+              "default": "false",
+              "description": "Indicate if you want a detailed description of the cell",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "cell_type"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "user_request": "Find me detailed information about the structure of human cell"
+  },
+  "source": {
+    "benchmark": "Berkeley Function Calling Leaderboard",
+    "category": "BFCL_v3_simple",
+    "dataset": "gorilla-llm/Berkeley-Function-Calling-Leaderboard",
+    "license": "Apache-2.0",
+    "original_id": "simple_55",
+    "url": "https://huggingface.co/datasets/gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+  },
+  "split": "train"
+}
