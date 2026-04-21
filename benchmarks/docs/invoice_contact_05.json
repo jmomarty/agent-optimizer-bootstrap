@@ -1,8 +1,0 @@
-{
-  "id": "docs_invoice_contact_05",
-  "kind": "docs_qa",
-  "split": "train",
-  "document": "Riverlane Ops Vendor Guide\n\nShipping requests go to the logistics queue.\nInvoice questions: billing@riverlane.example.\nUrgent outages must be routed through the incident desk.\nRefund requests close after 60 days.\nOnly approved contacts may change billing details.",
-  "question": "Which inbox should be used for invoice questions?",
-  "expected_answer": "billing@riverlane.example"
-}

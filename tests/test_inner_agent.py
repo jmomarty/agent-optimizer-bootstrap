@@ -10,6 +10,7 @@ from unittest.mock import patch
 import benchmark
 from inner_agent.agent import Agent
 from inner_agent.provider import ProviderNotConfiguredError
+from inner_agent.tools import resolve_path
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -108,6 +109,13 @@ class AgentScaffoldTests(unittest.TestCase):
             read_event.payload["output"]["error"],
             "Field not found in visible task.",
         )
+
+    def test_resolve_path_rejects_invalid_list_indexes(self) -> None:
+        payload = {"items": [{"name": "Ada"}]}
+
+        self.assertEqual(resolve_path(payload, "items[0].name"), (True, "Ada"))
+        self.assertEqual(resolve_path(payload, "items[name]"), (False, None))
+        self.assertEqual(resolve_path(payload, "items[3]"), (False, None))
 
     def test_unconfigured_provider_raises_clear_error(self) -> None:
         task = {"id": "t1", "question": "Test?"}

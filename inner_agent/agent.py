@@ -111,20 +111,13 @@ def build_visible_task(task: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def extra_guidance_for_task(visible_task: dict[str, Any]) -> str:
-    """Return optional dynamic guidance derived only from visible task context."""
-    return ""
-
-
 def build_initial_messages(
     config: AgentConfig,
     visible_task: dict[str, Any],
 ) -> list[dict[str, Any]]:
-    extra_guidance = extra_guidance_for_task(visible_task)
     user_prompt = (
         "Visible task object:\n"
         f"{json.dumps(visible_task, indent=2, sort_keys=True)}\n\n"
-        f"{extra_guidance}"
         "Use tools when needed and call finish(answer) when ready."
     )
     return [

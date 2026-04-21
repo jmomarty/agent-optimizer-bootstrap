@@ -1,8 +1,0 @@
-{
-  "id": "docs_refund_window_04",
-  "kind": "docs_qa",
-  "split": "train",
-  "document": "Pine Street Data Support Handbook\n\nSupport hours: Monday-Friday, 09:00-17:00 UTC.\nRefund policy: Customers may request a refund within 14 days of purchase.\nInvoice questions should go to billing@pinestreet.example.\nSecurity incidents must be acknowledged within 8 hours.\nEscalation changes must be documented in the operations runbook.",
-  "question": "How many days long is the refund period?",
-  "expected_answer": "14"
-}

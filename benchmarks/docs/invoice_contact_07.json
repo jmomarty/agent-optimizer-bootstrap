@@ -1,8 +1,0 @@
-{
-  "id": "docs_invoice_contact_07",
-  "kind": "docs_qa",
-  "split": "train",
-  "document": "Harbor Light Compute Vendor Guide\n\nShipping requests go to the logistics queue.\nInvoice questions: billing@harborlight.example.\nUrgent outages must be routed through the incident desk.\nRefund requests close after 10 days.\nOnly approved contacts may change billing details.",
-  "question": "For invoice questions, which email should be used?",
-  "expected_answer": "billing@harborlight.example"
-}

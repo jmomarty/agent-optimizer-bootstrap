@@ -1,8 +1,0 @@
-{
-  "id": "docs_invoice_contact_02",
-  "kind": "docs_qa",
-  "split": "train",
-  "document": "Northwind Systems Vendor Guide\n\nShipping requests go to the logistics queue.\nInvoice questions: billing@northwind.example.\nUrgent outages must be routed through the incident desk.\nRefund requests close after 21 days.\nOnly approved contacts may change billing details.",
-  "question": "Which email handles invoice questions?",
-  "expected_answer": "billing@northwind.example"
-}

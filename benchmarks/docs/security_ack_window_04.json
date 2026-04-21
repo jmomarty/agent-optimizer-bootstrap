@@ -1,8 +1,0 @@
-{
-  "id": "docs_security_ack_window_04",
-  "kind": "docs_qa",
-  "split": "train",
-  "document": "Pine Street Data Security Playbook\n\nLow-risk tickets are reviewed weekly.\nSecurity incidents must be acknowledged within 8 hours.\nBilling queries should be routed to billing@pinestreet.example.\nRefund policy remains 14 days from purchase.\nPostmortems are stored in the security knowledge base.",
-  "question": "In hours, how quickly must a security incident be acknowledged?",
-  "expected_answer": "8"
-}

@@ -13,7 +13,6 @@ class AgentConfig:
     vertex_location: str | None
     max_turns: int
     temperature: float
-    candidate_count: int
     search_result_limit: int
     prompt_template: str
 
@@ -50,7 +49,6 @@ def load_config(agent_dir: Path) -> AgentConfig:
         or "global",
         max_turns=int(os.getenv("AGENT_MAX_TURNS", "6")),
         temperature=float(os.getenv("AGENT_TEMPERATURE", "0.0")),
-        candidate_count=int(os.getenv("AGENT_CANDIDATE_COUNT", "1")),
         search_result_limit=int(os.getenv("AGENT_SEARCH_RESULT_LIMIT", "5")),
         prompt_template=prompt_template,
     )

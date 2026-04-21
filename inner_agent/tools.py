@@ -137,6 +137,8 @@ def resolve_path(payload: Any, path: str) -> tuple[bool, Any]:
             current = current[token]
             continue
         if isinstance(current, list):
+            if not token.isdigit():
+                return False, None
             index = int(token)
             if index >= len(current):
                 return False, None

@@ -1,20 +1,19 @@
-# Agent Optimizer Bootstrap Fresh
+# Agent Optimizer Bootstrap
 
-This repo is a clean restart of the optimizer scaffold. It keeps the generic
-Vertex-backed inner-agent structure and the benchmark observability work, while
-resetting the benchmark protocol to reduce overfitting pressure.
+A tiny, coding-agent driven benchmark loop for improving an inner agent.
 
-The main benchmark is now BFCL-primary: most tasks are generated from Berkeley
-Function Calling Leaderboard samples, with a tiny synthetic smoke subset kept to
-exercise the local harness task kinds.
+Inspired by Andrej Karpathy's
+[`autoresearch`](https://github.com/karpathy/autoresearch): keep the repo small,
+keep the metric fixed, let coding agents try changes, and keep only what
+improves.
 
-The main boundaries are:
+## The Three Surfaces
 
-- Codex is guided by `program.md` in one long-running session.
-- Only `inner_agent/**` is mutable during optimizer runs.
-- `prepare.py`, `benchmark.py`, and `benchmarks/**` stay fixed.
-- `train` is the visible optimization split.
-- `dev` is a held-out selection split with aggregate-only visibility.
+- `prepare.py` checks fixed benchmark data.
+- `benchmark.py` runs the fixed train/dev evaluation.
+- `inner_agent/` is the agent implementation that experiments edit.
+
+`program.md` is the operating manual for a coding agent.
 
 ## Quick Start
 
@@ -22,7 +21,7 @@ The main boundaries are:
 python3 prepare.py
 ```
 
-Configure a repo-root `.env` file if needed:
+Optional `.env`:
 
 ```bash
 AGENT_PROVIDER=vertex
@@ -43,42 +42,12 @@ Run the held-out split:
 uv run benchmark.py --agent-dir inner_agent --split dev
 ```
 
-Run a single task for train debugging:
+Debug one visible task:
 
 ```bash
 uv run benchmark.py --agent-dir inner_agent --task <task_id>
 ```
 
-Regenerate the BFCL-derived benchmark tasks:
+## Rule
 
-```bash
-python3 scripts/import_bfcl_samples.py
-```
-
-## Repo Layout
-
-```text
-prepare.py
-benchmark.py
-program.md
-pyproject.toml
-results.tsv
-
-inner_agent/
-benchmarks/
-runs/
-scripts/
-tests/
-```
-
-## What Changed from the Earlier Bootstrap
-
-- The benchmark is now split into `train` and `dev`.
-- The main benchmark now uses BFCL-derived function-calling tasks.
-- `dev` exposes aggregate metrics only by default.
-- `benchmark.py` writes live progress and timing metadata.
-- `results.tsv` is intended to track both `train` and `dev` metrics and mark
-  the current best checkpoint by `dev` score.
-
-This repo is intended to be the clean baseline that you commit and copy forward
-before each new optimizer run.
+Optimize held-out `dev` score. Edit only `inner_agent/**`. Simpler wins ties.
